@@ -24,7 +24,7 @@ const Header = () => {
         <div className="w-[95%] flex items-center justify-between">
           <img src="http://unionagency.one/delice/img/logo.png" alt="" />
 
-          <div className="flex items-center">
+          <div className="flex items-center mt-[12px]">
             <h3 className="mr-[55px] m-[10px] text-[15px] text-[#fff] font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
               Home
             </h3>
@@ -39,8 +39,8 @@ const Header = () => {
             </h3>
           </div>
 
-          <div className="flex">
-            <button className="w-[150px] h-[45px] rounded-md text-[#fff] border border-gray-400">
+          <div className="flex items-center mt-[12px]">
+            <button className="w-[150px] h-[45px] rounded-md text-[#fff] border border-[#fff]">
               Sign In/Sign Up
             </button>
           </div>
