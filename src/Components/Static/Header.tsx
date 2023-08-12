@@ -1,46 +1,46 @@
 import { useState, useEffect } from "react";
 
 const Header = () => {
-  const [isSticky, setIsSticky] = useState(false);
+  const [show, setShow] = useState(false);
 
-  const handleScroll = () => {
-    setIsSticky(window.pageYOffset >= 100);
+  const changeHeaderColor = () => {
+    setShow(window.scrollY >= 90);
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", changeHeaderColor);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", changeHeaderColor);
     };
   }, []);
 
   return (
     <section>
       <div
-        className={`w-[100%] h-[80px] flex bg-first justify-center ${
-          isSticky ? "fixed transition ease-in-out duration-300" : ""
+        className={`w-[100%] h-[80px] flex justify-center ${
+          show ? "fixed bg-first" : "bg-[] fixed"
         }`}
       >
         <div className="w-[95%] flex items-center justify-between">
           <img src="http://unionagency.one/delice/img/logo.png" alt="" />
 
           <div className="flex items-center">
-            <h3 className="mr-[55px] m-[10px] text-15px text-white font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
+            <h3 className="mr-[55px] m-[10px] text-[15px] text-[#fff] font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
               Home
             </h3>
-            <h3 className="mr-[55px] m-[10px] text-15px text-white font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
+            <h3 className="mr-[55px] m-[10px] text-[15px] text-[#fff] font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
               Our Menus
             </h3>
-            <h3 className="mr-[55px] m-[10px] text-15px text-white font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
+            <h3 className="mr-[55px] m-[10px] text-[15px] text-[#fff] font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
               About Us
             </h3>
-            <h3 className="mr-[55px] m-[10px] text-15px text-white font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
+            <h3 className="mr-[55px] m-[10px] text-[15px] text-[#fff] font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
               Contact Us
             </h3>
           </div>
 
           <div className="flex">
-            <button className="w-[150px] h-[45px] rounded-md text-white border border-gray-400">
+            <button className="w-[150px] h-[45px] rounded-md text-[#fff] border border-gray-400">
               Sign In/Sign Up
             </button>
           </div>
