@@ -14,7 +14,8 @@ export default {
         'second': '#440C4D',
         'third': '#7B337D',
         'fourth': '#C973B4',
-        'fifth': '#F5D5E0'
+        'fifth': '#F5D5E0',
+        'bg-black-opacity': 'rgba(0, 0, 0, 0.2)',
       }
     },
   },
