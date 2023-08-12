@@ -2,7 +2,9 @@
 
 const Header = () => {
   return (
-    <div>Header</div>
+      <section>
+          <div className="w-[100%] h-[80px] flex bg-first">Header</div>
+    </section>
   )
 }
 
