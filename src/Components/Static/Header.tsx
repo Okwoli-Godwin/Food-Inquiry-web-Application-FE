@@ -27,7 +27,7 @@ const Header = () => {
     <section>
       <div
         className={`w-[100%] h-[80px] flex justify-center ${
-          show ? "fixed bg-first z-10" : "bg-first fixed z-10"
+          show ? "fixed bg-first z-10" : "bg-[] fixed z-10"
         }`}
       >
         <div className="w-[95%] flex items-center justify-between">
