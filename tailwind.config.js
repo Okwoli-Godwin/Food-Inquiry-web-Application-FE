@@ -6,9 +6,24 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+      '2xl': {'max': '1440px'},
+
+      'xl': {'max': '1024px'},
+
+      'lg': {'max': '768px'},
+
+      'md': {'max': '500px'},
+
+      'sm': {'max': '375px'},  
+      
+      'xsm': {'max': '320px'}, 
+      },
+
       fontFamily: {
         'great-vibes': ['Great Vibes', 'cursive'],
       },
+
       backgroundImage: {
         'hero': "url('https://media.istockphoto.com/id/1570804712/photo/chicken-fried-rice-and-spoon-on-wooden-background-top-view.jpg?s=612x612&w=0&k=20&c=70DQNJu63imB4YtQcpNhwatHxUKKNq909T3D3ipi-14=')",
 
