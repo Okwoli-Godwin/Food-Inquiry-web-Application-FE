@@ -1,7 +1,7 @@
 const RecipeText = () => {
   return (
     <div className="bg-white shadow-md w-[95%] p-5 max-md:w-full">
-      <div className="w-[90%] text-gray-600 text-lg m-auto  max-md:w-full">
+      <div className="w-[95%] text-gray-600 text-lg m-auto  max-md:w-full">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla
           augue nec est tristique auctor. Donec non est at libero vulputate
