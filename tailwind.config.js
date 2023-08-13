@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontSize: {
+        sm: '20px',
+        md: '32px',
+      },
       screens: {
       '2xl': {'max': '1440px'},
 
