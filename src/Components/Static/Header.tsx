@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [show, setShow] = useState(false);
@@ -39,11 +40,13 @@ const Header = () => {
             </h3>
           </div>
 
-          <div className="flex items-center mt-[12px]">
+         <NavLink to="/sign-in">
+         <div className="flex items-center mt-[12px]">
             <button className="w-[150px] h-[45px] rounded-md text-[#fff] border border-[#fff]">
               Sign In/Sign Up
             </button>
           </div>
+         </NavLink>
         </div>
       </div>
     </section>

@@ -21,7 +21,7 @@ const Hero = () => {
                   
                   <div className="w-[95%] flex-col items-center flex">
                 <h3 className="font-great-vibes text-[60px] p-0 text-[#F4A01B]">Welcome</h3>
-                <h2 className="text-[#fff] text-[47px] font-bold mt-[12px]">HIGHT QUALITY MEALS</h2>
+                <h2 className="text-[#fff] text-[47px] font-bold mt-[12px]">HIGH QUALITY MEALS</h2>
                 <p className="text-[#b9b9b9] text-[20px] w-[650px] text-center mt-[12px]">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.
                 </p>
