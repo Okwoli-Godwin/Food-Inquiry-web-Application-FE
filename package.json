@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/react-icons": "^3.0.0",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-scroll": "^1.8.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
     "react-router-dom": "^6.15.0",
     "react-scroll": "^1.8.9"
   },
