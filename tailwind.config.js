@@ -10,7 +10,11 @@ export default {
         'great-vibes': ['Great Vibes', 'cursive'],
       },
       backgroundImage: {
-        'hero': "url('https://media.istockphoto.com/id/1570804712/photo/chicken-fried-rice-and-spoon-on-wooden-background-top-view.jpg?s=612x612&w=0&k=20&c=70DQNJu63imB4YtQcpNhwatHxUKKNq909T3D3ipi-14=')"
+        'hero': "url('https://media.istockphoto.com/id/1570804712/photo/chicken-fried-rice-and-spoon-on-wooden-background-top-view.jpg?s=612x612&w=0&k=20&c=70DQNJu63imB4YtQcpNhwatHxUKKNq909T3D3ipi-14=')",
+
+        'hero2': "url('https://media.istockphoto.com/id/1499133195/photo/a-delicious-bowl-of-soto-indonesian-food.jpg?s=612x612&w=0&k=20&c=0zOkaOLFjRSsq5HfktB1d-c6KOaefNvCd6Ptu8FiwOE=')",
+
+        'hero3': "url('https://media.istockphoto.com/id/1373169941/photo/afang-soup.jpg?s=612x612&w=0&k=20&c=OxEiHp0fd-LOa1FBatSvepOr7skLrxCN-pMspou6d7c=')"
       },
       colors: {
         'first': '#210535',
