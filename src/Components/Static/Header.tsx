@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import {FiMenu} from "react-icons/fi"
+import { NavLink } from "react-router-dom";
+
 
 const Header = () => {
   const [show, setShow] = useState(false);
@@ -40,16 +42,14 @@ const Header = () => {
             </h3>
           </div>
 
-          <div className="flex items-center mt-[12px] lg:hidden
-          ">
-            <button className="w-[150px] h-[45px] rounded-md text-[#fff] border border-[#fff] ">
+
+         <NavLink to="/sign-in">
+         <div className="flex items-center mt-[12px]">
+            <button className="w-[150px] h-[45px] rounded-md text-[#fff] border border-[#fff]">
               Sign In/Sign Up
             </button>
           </div>
-
-          <div className="text-[#fff] text-[32px] cursor-pointer mt-[12px] hidden lg:flex">
-            <FiMenu />
-          </div>
+         </NavLink>
         </div>
       </div>
     </section>
