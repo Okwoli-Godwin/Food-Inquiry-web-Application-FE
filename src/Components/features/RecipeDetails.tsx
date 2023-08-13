@@ -24,6 +24,18 @@ const RecipeDetails = () => {
         rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi,
         vulputate adipiscing cursus eu, suscipit id nulla. Donec a neque libero.
       </p>
+      <hr />
+
+      {/* ingredients */}
+      <div>
+        <label className="text-2xl font-medium">Ingredients</label>
+        <ul className="list-disc text-lg my-2 mx-5">
+          <li>an ingredient </li>
+          <li>an ingredient </li>
+          <li>an ingredient </li>
+          <li>an ingredient </li>
+        </ul>
+      </div>
     </div>
   );
 };
