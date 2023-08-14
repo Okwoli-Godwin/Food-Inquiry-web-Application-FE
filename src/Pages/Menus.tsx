@@ -32,11 +32,11 @@ const Menus = () => {
                 </div>
 
                 <div className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit: cover">
-                    <img src="https://media.istockphoto.com/id/1009279168/photo/pasta-with-meat-and-vegetables.jpg?s=612x612&w=0&k=20&c=nV8FrAKQUWBhlFdnw-yQmuxRYACPRh6EXi0YHWvddC0=" alt="" className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105" />
+                    <img src="https://media.istockphoto.com/id/1265268905/photo/barbecue-chicken-jollof-rice.jpg?s=612x612&w=0&k=20&c=ohtrgIislco_-79g8I6AijYUJ2Yt923weh029-N7MUE=" alt="" className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105" />
                     
                     <div className="w-[100%] p-[12px] flex-col">
                         <div className="w-[100%] flex items-center justify-between">
-                            <h3 className="text-[25px]">Spaghetti</h3>
+                            <h3 className="text-[25px]">Ofada Rice</h3>
                             <div className="flex items-center text-[gold]">
                                 <BsStarFill/>
                                 <BsStarFill />
