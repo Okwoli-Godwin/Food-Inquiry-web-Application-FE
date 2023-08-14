@@ -1,13 +1,21 @@
 import {BsStarFill, BsStarHalf} from "react-icons/bs"
 import { NavLink } from "react-router-dom"
-import {useState, useEffect} from "react"
+import {useState} from "react"
 
 const Menus = () => {
 
     const [show, setShow] = useState(false)
+    const [show2, setShow2] = useState(false)
+    const [show3, setShow3] = useState(false)
 
     const Toggle = () => {
         setShow(!show);
+    }
+    const Toggle2 = () => {
+        setShow2(!show2);
+    }
+    const Toggle3 = () => {
+        setShow3(!show3);
     }
 
     const usdAmount = 500.00;
@@ -55,7 +63,7 @@ const Menus = () => {
                     </div>
                 </div>
 
-                <div className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit: cover">
+                <div className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit: cover relative">
                     <img src="https://media.istockphoto.com/id/1265268905/photo/barbecue-chicken-jollof-rice.jpg?s=612x612&w=0&k=20&c=ohtrgIislco_-79g8I6AijYUJ2Yt923weh029-N7MUE=" alt="" className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105" />
                     
                     <div className="w-[100%] p-[12px] flex-col">
@@ -71,8 +79,15 @@ const Menus = () => {
 
                         <div className="flex items-center mt-[5px]">
                             <p>₦1500</p>
-                            <button className="border border-third  w-[170px] h-[40px] rounded ml-[12px]">Click to see USD price</button>
+                            <button onClick={Toggle2} className="border border-third  w-[170px] h-[40px] rounded ml-[12px]">Click to see USD price</button>
                         </div>
+
+                        {show2 ? (
+                            <div className="absolute w-[160px] h-[150px] bg-white shadow-sm top-[150px] left-[100px] rounded-sm transition-transform duration-300 flex flex-col justify-center items-center">
+                                <h2 className="text-2xl font-bold text-gray-800 mb-2">$ {usdAmount.toFixed(2)}</h2>
+                                <p className="text-sm text-gray-500">Total USD</p>
+                        </div>
+                        ) : null}
 
                         <p className="mt-[5px]">Calories: 80% carbs</p>
 
@@ -80,7 +95,7 @@ const Menus = () => {
                     </div>
                 </div>
 
-                <div className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover ">
+                <div className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative">
                     <img src="https://media.istockphoto.com/id/1398349816/photo/oha-soup.jpg?s=612x612&w=0&k=20&c=9IMVj6aGvW62S3R11KcTk5TptUaTq1gF-W0wWQtV3HA=" alt="" className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105" />
                     
                     <div className="w-[100%] p-[12px] flex-col">
@@ -96,8 +111,15 @@ const Menus = () => {
 
                         <div className="flex items-center mt-[5px]">
                             <p>₦1800</p>
-                            <button className="border border-third w-[170px] h-[40px] rounded ml-[12px]">Click to see USD price</button>
+                            <button onClick={Toggle3} className="border border-third w-[170px] h-[40px] rounded ml-[12px]">Click to see USD price</button>
                         </div>
+
+                        {show3 ? (
+                            <div className="absolute w-[160px] h-[150px] bg-white shadow-sm top-[150px] left-[100px] rounded-sm transition-transform duration-300 flex flex-col justify-center items-center">
+                                <h2 className="text-2xl font-bold text-gray-800 mb-2">$ {usdAmount.toFixed(2)}</h2>
+                                <p className="text-sm text-gray-500">Total USD</p>
+                        </div>
+                        ) : null}
 
                         <p className="mt-[5px]">Calories: 80% carbs</p>
 
