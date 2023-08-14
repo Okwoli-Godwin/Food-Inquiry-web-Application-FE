@@ -22,12 +22,12 @@ const Menus = () => {
 
                         <div className="flex items-center mt-[5px]">
                             <p>₦1000</p>
-                            <button className="bg-[gold] text-[#fff] w-[170px] h-[40px] rounded ml-[12px]">Click to see USD price</button>
+                            <button className="border border-third w-[170px] h-[40px] rounded ml-[12px]">Click to see USD price</button>
                         </div>
 
                         <p className="mt-[5px]">Calories: 80% carbs</p>
 
-                        <button className="w-[100%] h-[40px] bg-[gold] text-[#fff] cursor-pointer rounded mt-[20px]">View Recipies</button>
+                        <button className="w-[100%] h-[40px] bg-third text-[#fff] cursor-pointer rounded mt-[20px]">View Recipies</button>
                     </div>
                 </div>
 
@@ -47,12 +47,12 @@ const Menus = () => {
 
                         <div className="flex items-center mt-[5px]">
                             <p>₦1500</p>
-                            <button className="bg-[gold] text-[#fff] w-[170px] h-[40px] rounded ml-[12px]">Click to see USD price</button>
+                            <button className="border border-third  w-[170px] h-[40px] rounded ml-[12px]">Click to see USD price</button>
                         </div>
 
                         <p className="mt-[5px]">Calories: 80% carbs</p>
 
-                        <button className="w-[100%] h-[40px] bg-[gold] text-[#fff] cursor-pointer rounded mt-[20px]">View Recipies</button>
+                        <button className="w-[100%] h-[40px] bg-third text-[#fff] cursor-pointer rounded mt-[20px]">View Recipies</button>
                     </div>
                 </div>
 
@@ -72,12 +72,12 @@ const Menus = () => {
 
                         <div className="flex items-center mt-[5px]">
                             <p>₦1800</p>
-                            <button className="bg-[gold] text-[#fff] w-[170px] h-[40px] rounded ml-[12px]">Click to see USD price</button>
+                            <button className="border border-third w-[170px] h-[40px] rounded ml-[12px]">Click to see USD price</button>
                         </div>
 
                         <p className="mt-[5px]">Calories: 80% carbs</p>
 
-                        <button className="w-[100%] h-[40px] bg-[gold] text-[#fff] cursor-pointer rounded mt-[20px]">View Recipies</button>
+                        <button className="w-[100%] h-[40px] bg-third text-[#fff] cursor-pointer rounded mt-[20px]">View Recipies</button>
                     </div>
                 </div>
             </div>
