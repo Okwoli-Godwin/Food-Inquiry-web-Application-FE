@@ -10,6 +10,8 @@ const Adventure = () => {
                 <p className="text-[#fff] w-[350px] mt-[15px] text-[17px]">
                     On a cold winter night, brighten up your table with a big, colorful mix of Recipies.
                 </p>
+
+                <button className="w-[230px] h-[50px] mt-[20px] text-[#fff] bg-third rounded flex justify-center items-center">View Restaurants</button>
             </div>
         </div>
     )
