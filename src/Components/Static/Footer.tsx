@@ -37,7 +37,7 @@ const Footer = () => {
           >
               <img src="http://unionagency.one/delice/img/logo.png" className="h-[40px]" />
 
-              <div className="flex items-center mt-[35px] lg:hidden">
+              <div className="flex items-center mt-[35px]">
             <h3 className="mr-[55px] m-[10px] text-[15px] text-[#fff] font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
               Home
             </h3>
