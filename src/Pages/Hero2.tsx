@@ -1,23 +1,8 @@
 import {CiSearch} from "react-icons/ci"
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Hero2 from "./Hero2";
-import Hero3 from "./Hero3"
 
-const Hero = () => {
-
-    const settings = {
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-  };
+const Hero2 = () => {
   return (
-      <section style={{overflow: "hidden"}}>
-        <Slider {...settings}>
-            <div className="h-[100%] w-[100%] bg-hero bg-center bg-no-repeat bg-cover relative">
+    <div className="h-[100%] w-[100%] bg-hero2 bg-center bg-no-repeat bg-cover relative">
               <div className="w-[100%] h-[100%] pt-[200px] pb-[200px] flex justify-center items-center md:pt-[100px] md:pb-[100px]" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
                   
                   <div className="w-[95%] flex-col items-center flex md:mt-[13px]">
@@ -33,18 +18,12 @@ const Hero = () => {
                             <CiSearch />
                         </div>
                     </div>
-                    <input type="text" className="flex-1 h-[100%] border-none outline-none" placeholder="Search recipes......"/>
+                    <input  className="flex-1 h-[100%] border-none outline-none" placeholder="Search recipes......"/>
                 </div>
             </div>
             </div>
               </div>
-              
-              <Hero2 />
-            
-              <Hero3 />
-        </Slider>
-      </section>
   )
 }
 
-export default Hero
+export default Hero2
