@@ -61,7 +61,7 @@ const Contact = () => {
                 > 
                 </textarea>
                 
-                <button className="w-[160px] h-[45px] flex justify-center items-center text-[#fff] bg-third mt-[17px]">Send comments</button>
+                <button className="w-[160px] h-[45px] flex justify-center rounded items-center text-[#fff] bg-third mt-[17px]">Send comments</button>
               </div>
           </div>
           </div>
