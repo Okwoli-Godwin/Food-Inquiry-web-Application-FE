@@ -35,7 +35,9 @@ export default {
 
         'hero3': "url('https://media.istockphoto.com/id/1373169941/photo/afang-soup.jpg?s=612x612&w=0&k=20&c=OxEiHp0fd-LOa1FBatSvepOr7skLrxCN-pMspou6d7c=')",
 
-        'signinbg': "url('https://media.istockphoto.com/id/1128915783/photo/delicious-appetizing-classic-spaghetti-pasta-with-tomato-sauce-parmesan-cheese-and-fresh.jpg?s=612x612&w=0&k=20&c=UqLauvhesSHXpjA4FgOsPbjmuAytffqnhwEl0Mt5eHU=')"
+        'signinbg': "url('https://media.istockphoto.com/id/1128915783/photo/delicious-appetizing-classic-spaghetti-pasta-with-tomato-sauce-parmesan-cheese-and-fresh.jpg?s=612x612&w=0&k=20&c=UqLauvhesSHXpjA4FgOsPbjmuAytffqnhwEl0Mt5eHU=')",
+
+        'venture': "url('https://media.istockphoto.com/id/1394055240/photo/happy-black-female-chef-preparing-food-in-frying-pan-at-restaurant-kitchen.jpg?s=612x612&w=0&k=20&c=6DjpoYqgYVDLmtj3-q7H7wvoiwkVgzi1rn7a_XUZ_Ng=')"
       },
       colors: {
         'first': '#210535',

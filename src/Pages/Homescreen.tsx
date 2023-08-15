@@ -1,5 +1,6 @@
 import Hero from "./Hero"
 import Menus from "./Menus"
+import Adventure from "./Adventure"
 
 
 const Homescreen = () => {
@@ -7,6 +8,10 @@ const Homescreen = () => {
       <div>
       <Hero />
       <Menus />
+      <br />
+      <br />
+      <br />
+      <Adventure />
     </div>
   )
 }
