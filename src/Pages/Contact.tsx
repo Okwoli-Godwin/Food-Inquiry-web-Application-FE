@@ -1,6 +1,7 @@
 import { BsTelephoneFill } from "react-icons/bs"
 import { MdEmail } from "react-icons/md"
-import {MdLocationPin} from "react-icons/md"
+import { MdLocationPin } from "react-icons/md"
+import img from "../assets/map.png"
 
 const Contact = () => {
 
@@ -32,6 +33,37 @@ const Contact = () => {
                   <h3 className="text-[#fff] text-[20px] font-semibold mt-[22px]">Location</h3>
                   <p className="text-[#fff] mt-[7px]">25 main road, Lagos</p>
               </div>
+          </div>
+
+          <div className="w-[100%] flex justify-center mt-[70px]">
+              <div className="w-[70%] flex flex-wrap ">
+              <div className="w-[48%]">
+                  <img src={img} alt="" />
+              </div>
+              
+              <div className="w-[48%] flex flex-col">
+                <h3 className="text-[26px] font-semibold">Send Us Message</h3>
+                <input 
+                    type="text" 
+                    placeholder="Full name" 
+                    className="border border-gray-500 h-[45px] pl-[15px] rounded outline-none mt-[27px]"
+                />
+                
+                <input 
+                    type="email" 
+                    placeholder="Email address" 
+                    className="border border-gray-500 h-[45px] pl-[15px] rounded outline-none mt-[17px]"
+                />
+                
+                <textarea 
+                    placeholder="Write Message"
+                    className="p-[12px] rounded h-[130px] border border-gray-500 outline-none mt-[17px] resize-none"
+                > 
+                </textarea>
+                
+                <button className="w-[160px] h-[45px] flex justify-center items-center text-[#fff] bg-third mt-[17px]">Send comments</button>
+              </div>
+          </div>
           </div>
       </section>
   )
