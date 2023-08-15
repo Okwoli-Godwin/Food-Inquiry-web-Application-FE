@@ -4,6 +4,7 @@ import Homescreen from "../Pages/Homescreen";
 import SignIn from "../Pages/AuthPages/SignIn";
 import SignUp from "../Pages/AuthPages/SignUp";
 import SingleRecipe from "../Pages/SingleRecipe";
+import Recipies from "../Pages/Recipies";
 
 export const main = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ export const main = createBrowserRouter([
         path: "/recipe/:id",
         element: <SingleRecipe />,
       },
+      {
+        path: "/recipies",
+        element: <Recipies />
+      }
     ],
   },
   {
