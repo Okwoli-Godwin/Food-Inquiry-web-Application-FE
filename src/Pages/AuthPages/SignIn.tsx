@@ -14,7 +14,7 @@ const SignIn = () => {
 
   return (
     <div className="w-[100%] h-[100%] bg-signinbg bg-no-repeat bg-center bg-cover">
-      <div className="w-[100%] flex justify-between h-[100%] pt-[66px] pb-[66px] items-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
+      <div className="w-[100%] flex justify-between h-[100%] pt-[76px] pb-[76px] items-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
         
         <div className="w-[55%] pl-[80px] flex-col flex">
           <h2 className="text-[#fff] text-[35px] font-semibold">Healthy Recipies and Calories, all in One</h2>
