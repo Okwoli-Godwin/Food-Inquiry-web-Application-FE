@@ -127,6 +127,8 @@ const Menus = () => {
                     </div>
                 </div>
             </div>
+
+            <button className="w-[220px] h-[45px] mt-[50px] border border-third rounded flex justify-center items-center hover:bg-third hover:text-[#fff]">View more</button>
     </div>
   )
 }

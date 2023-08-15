@@ -33,7 +33,9 @@ export default {
 
         'hero2': "url('https://media.istockphoto.com/id/1499133195/photo/a-delicious-bowl-of-soto-indonesian-food.jpg?s=612x612&w=0&k=20&c=0zOkaOLFjRSsq5HfktB1d-c6KOaefNvCd6Ptu8FiwOE=')",
 
-        'hero3': "url('https://media.istockphoto.com/id/1373169941/photo/afang-soup.jpg?s=612x612&w=0&k=20&c=OxEiHp0fd-LOa1FBatSvepOr7skLrxCN-pMspou6d7c=')"
+        'hero3': "url('https://media.istockphoto.com/id/1373169941/photo/afang-soup.jpg?s=612x612&w=0&k=20&c=OxEiHp0fd-LOa1FBatSvepOr7skLrxCN-pMspou6d7c=')",
+
+        'signinbg': "url('https://media.istockphoto.com/id/1128915783/photo/delicious-appetizing-classic-spaghetti-pasta-with-tomato-sauce-parmesan-cheese-and-fresh.jpg?s=612x612&w=0&k=20&c=UqLauvhesSHXpjA4FgOsPbjmuAytffqnhwEl0Mt5eHU=')"
       },
       colors: {
         'first': '#210535',

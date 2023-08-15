@@ -49,10 +49,10 @@ const Header = () => {
           </div>
 
 
-         <NavLink to="/sign-up">
+         <NavLink to="/sign-in">
          <div className="flex items-center mt-[12px] lg:hidden">
             <button className="w-[150px] h-[45px] rounded-md text-[#fff] border border-[#fff]">
-              Sign In/Sign Up
+              Sign In
             </button>
           </div>
          </NavLink>
