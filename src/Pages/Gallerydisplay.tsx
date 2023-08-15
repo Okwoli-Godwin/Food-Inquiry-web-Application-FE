@@ -3,7 +3,7 @@
 const Gallerydisplay = () => {
     return (
         <div className="w-[100%] h-[100%] justify-center flex-col items-center flex">
-            <h3 className="text-[30px] font-semibold md:text-[25px]">Subscribe to the best recipes feed</h3>
+            <h3 className="text-[30px] font-semibold md:text-[25px] sm:text-center">Subscribe to the best recipes feed</h3>
             <input
                 type="email"
                 placeholder="Enter your email..."
