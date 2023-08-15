@@ -13,6 +13,9 @@ const Homescreen = () => {
       <br />
       <br />
       <Adventure />
+      <br />
+      <br />
+      <br />
       <Gallerydisplay />
     </div>
   )
