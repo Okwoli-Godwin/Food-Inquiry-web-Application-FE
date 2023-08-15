@@ -34,9 +34,11 @@ const Header = () => {
           <img src="http://unionagency.one/delice/img/logo.png" alt="" className="md:h-[30px]"/>
 
           <div className="flex items-center mt-[12px] lg:hidden">
-            <h3 className="mr-[55px] m-[10px] text-[15px] text-[#fff] font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
+            <NavLink to="/">
+              <h3 className="mr-[55px] m-[10px] text-[15px] text-[#fff] font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
               Home
             </h3>
+            </NavLink>
             <NavLink to="/recipies">
               <h3 className="mr-[55px] m-[10px] text-[15px] text-[#fff] font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
               Recipies
@@ -82,9 +84,11 @@ const Header = () => {
             </button>
           </div>
           <div className="flex flex-col py-3 px-2 overflow-y-auto ">
-            <h3 className="mr-[55px] m-[10px] text-[20px] font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
+            <NavLink to="/">
+              <h3 className="mr-[55px] m-[10px] text-[20px] font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
               Home
             </h3>
+            </NavLink>
             
           <NavLink to="/recipies">
             <h3 className="mr-[55px] m-[10px] text-[20px] font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
