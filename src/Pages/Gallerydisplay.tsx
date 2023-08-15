@@ -2,21 +2,14 @@
 
 const Gallerydisplay = () => {
     return (
-        <div className="w-[100%] h-[100%]">
-            <div className="w-[100%] flex flex-wrap">
-                <div className="w-[25%] h-[250px]">
-                    <img src="https://media.istockphoto.com/id/1473452859/photo/tasty-cheeseburger-glass-of-cola-and-french-fries-on-wooden-tray-close-up.jpg?s=612x612&w=0&k=20&c=QLq7mv50xRL-LSfLYgUwNHsHm8Ri5nWrIdNwQL0qCqc=" alt="" />
-                </div>
-                <div className="w-[25%] h-[250px]">
-                    <img src="https://media.istockphoto.com/id/1473452859/photo/tasty-cheeseburger-glass-of-cola-and-french-fries-on-wooden-tray-close-up.jpg?s=612x612&w=0&k=20&c=QLq7mv50xRL-LSfLYgUwNHsHm8Ri5nWrIdNwQL0qCqc=" alt="" />
-                </div>
-                <div className="w-[25%] h-[250px]">
-                    <img src="https://media.istockphoto.com/id/1473452859/photo/tasty-cheeseburger-glass-of-cola-and-french-fries-on-wooden-tray-close-up.jpg?s=612x612&w=0&k=20&c=QLq7mv50xRL-LSfLYgUwNHsHm8Ri5nWrIdNwQL0qCqc=" alt="" />
-                </div>
-                <div className="w-[25%] h-[250px]">
-                    <img src="https://media.istockphoto.com/id/1473452859/photo/tasty-cheeseburger-glass-of-cola-and-french-fries-on-wooden-tray-close-up.jpg?s=612x612&w=0&k=20&c=QLq7mv50xRL-LSfLYgUwNHsHm8Ri5nWrIdNwQL0qCqc=" alt="" />
-                </div>
-            </div>
+        <div className="w-[100%] h-[100%] justify-center flex-col items-center flex">
+            <h3 className="text-[30px] font-semibold">Subscribe to the best recipes feed</h3>
+            <input
+                type="email"
+                placeholder="Enter your email..."
+                className="w-[40%] h-[55px] border border-gray-500 pl-[20px] rounded mt-[30px] outline-none"
+            />
+            <button className="w-[250px] mt-[30px] h-[60px] bg-second rounded justify-center items-center text-[#fff]">Subscribe</button>
         </div>
     )
 }
