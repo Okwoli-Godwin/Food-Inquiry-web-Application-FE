@@ -8,7 +8,7 @@ const SignupForm: React.FC = () => {
   return (
 
     <div className="w-[100%] h-[100%] bg-signinbg bg-no-repeat bg-center bg-cover">
-      <div className="w-[100%] flex justify-between h-[100%] pt-[66px] pb-[66px] items-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+      <div className="w-[100%] flex justify-between h-[100%] pt-[65px] pb-[64px] items-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
         
         <div className="w-[55%] pl-[80px] flex-col flex">
           <h2 className="text-[#fff] text-[35px] font-semibold">Healthy Recipies and Calories, all in One</h2>
@@ -28,23 +28,26 @@ const SignupForm: React.FC = () => {
             <input
               type="text"
               placeholder="Password"
-              className="h-[48px] w-[100%] border border-gray-400 pl-[15px] outline-none rounded mt-[40px]"
+              className="h-[48px] w-[100%] border border-gray-400 pl-[15px] outline-none rounded mt-[20px]"
+            />
+            <input
+              type="text"
+              placeholder="Confirm password"
+              className="h-[48px] w-[100%] border border-gray-400 pl-[15px] outline-none rounded mt-[20px]"
             />
 
-            <h3 className="text-[17px] font-semibold mt-[20px]">Forgot password</h3>
-
             <button className="w-[100%] h-[50px] flex justify-center items-center bg-third text-[#fff] rounded mt-[30px]">
-              Sign In
+              Create account
             </button>
 
             <h3 className="text-[15px] mt-[15px] flex">
-              DOn't have an account?
-              <NavLink to="/sign-up">
-                <span className="text-fourth ml-[8px] cursor-pointer">Sign up</span>
+              Already have an account?
+              <NavLink to="/sign-in">
+                <span className="text-fourth ml-[8px] cursor-pointer">Sign in</span>
               </NavLink>
             </h3>
             <div className="w-[100%] flex flex-col items-center mt-[25px]">
-              <h3>Or sign in with</h3>
+              <h3>Or sign up with</h3>
               <div className="mt-[18px] flex">
                 <div className="text-[22px] ml-[12px]"><FcGoogle /></div>
                 <div className="text-[blue] text-[18px] ml-[12px]"><BsFacebook /></div>
