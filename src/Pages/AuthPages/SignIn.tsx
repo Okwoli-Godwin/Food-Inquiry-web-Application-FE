@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom"
 const SignIn = () => {
   return (
     <div className="w-[100%] h-[100%] bg-signinbg bg-no-repeat bg-center bg-cover">
-      <div className="w-[100%] flex justify-between h-[100%] pt-[66px] pb-[66px] items-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+      <div className="w-[100%] flex justify-between h-[100%] pt-[66px] pb-[66px] items-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
         
         <div className="w-[55%] pl-[80px] flex-col flex">
           <h2 className="text-[#fff] text-[35px] font-semibold">Healthy Recipies and Calories, all in One</h2>
@@ -35,7 +35,7 @@ const SignIn = () => {
             </button>
 
             <h3 className="text-[15px] mt-[15px] flex">
-              DOn't have an account?
+              Don't have an account?
               <NavLink to="/sign-up">
                 <span className="text-fourth ml-[8px] cursor-pointer">Sign up</span>
               </NavLink>
