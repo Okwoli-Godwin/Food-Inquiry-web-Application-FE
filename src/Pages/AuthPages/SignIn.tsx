@@ -1,5 +1,6 @@
 import { FcGoogle } from "react-icons/fc"
-import {BsFacebook, BsTwitter} from "react-icons/bs"
+import { BsFacebook, BsTwitter } from "react-icons/bs"
+import {NavLink} from "react-router-dom"
 
 const SignIn = () => {
   return (
@@ -35,7 +36,9 @@ const SignIn = () => {
 
             <h3 className="text-[15px] mt-[15px] flex">
               DOn't have an account?
-              <span className="text-fourth ml-[8px] cursor-pointer">Sign up</span>
+              <NavLink to="/sign-up">
+                <span className="text-fourth ml-[8px] cursor-pointer">Sign up</span>
+              </NavLink>
             </h3>
             <div className="w-[100%] flex flex-col items-center mt-[25px]">
               <h3>Or sign in with</h3>
