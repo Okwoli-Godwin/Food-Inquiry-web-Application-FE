@@ -1,8 +1,17 @@
 import { FcGoogle } from "react-icons/fc"
 import { BsFacebook, BsTwitter } from "react-icons/bs"
-import {NavLink} from "react-router-dom"
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { NavLink } from "react-router-dom"
+import {useState} from "react"
 
 const SignIn = () => {
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <div className="w-[100%] h-[100%] bg-signinbg bg-no-repeat bg-center bg-cover">
       <div className="w-[100%] flex justify-between h-[100%] pt-[66px] pb-[66px] items-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
@@ -22,11 +31,16 @@ const SignIn = () => {
               placeholder="Email"
               className="h-[48px] w-[100%] border border-gray-400 pl-[15px] outline-none rounded mt-[40px]"
             />
-            <input
-              type="text"
-              placeholder="Password"
-              className="h-[48px] w-[100%] border border-gray-400 pl-[15px] outline-none rounded mt-[40px]"
-            />
+            <div className="flex items-center w-[100%] border border-gray-400 h-[48px] mt-[20px] rounded pr-[10px]">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                className="h-[100%] w-[100%]  pl-[15px] outline-none  "
+              />
+              <div onClick={togglePasswordVisibility} className="cursor-pointer">
+                {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+              </div>
+            </div>
 
             <h3 className="text-[17px] font-semibold mt-[20px]">Forgot password</h3>
 
