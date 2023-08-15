@@ -24,18 +24,18 @@ const Recipies = () => {
       <section style={{overflow: "hidden"}}>
             <div className="h-[100%] w-[100%] bg-recipehero bg-center bg-no-repeat bg-cover relative">
               <div className="w-[100%] h-[100%] pt-[200px] pb-[200px] flex-col flex justify-center items-center md:pt-[100px] md:pb-[100px]" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
-                  <h1 className="text-[#fff] text-[60px] font-bold">Recipe Grid</h1>
-                  <p className="text-[#fff] text-[30px] mt-[10px]">Home || Recipes</p>
+                  <h1 className="text-[#fff] text-[60px] font-bold md:text-[40px]">Recipe Grid</h1>
+                  <p className="text-[#fff] text-[30px] mt-[10px] md:text-[25px]">Home || Recipes</p>
             </div>
           </div>
           
           <div className="w-[100%] flex justify-center">
-              <div className="w-[95%] flex h-[100%] mt-[65px] flex-wrap justify-between">
+              <div className="w-[95%] flex h-[100%] mt-[65px] flex-wrap justify-between md:justify-center">
                 <div className="w-[390px] h-[100%] rounded-lg mb-[30px] flex-col overflow-hidden shadow-md object-fit: cover relative">
                     <img
                         src="https://media.istockphoto.com/id/1009279168/photo/pasta-with-meat-and-vegetables.jpg?s=612x612&w=0&k=20&c=nV8FrAKQUWBhlFdnw-yQmuxRYACPRh6EXi0YHWvddC0="
                         alt=""
-                        className="w-[100%] h-[250px] transition-transform duration-300 hover:scale-105"
+                        className="w-[100%] h-[250px] transition-transform duration-300 hover:scale-105 object-cover"
                     />
                     
                     <div className="w-[100%] p-[12px] flex-col">
@@ -70,7 +70,7 @@ const Recipies = () => {
                 </div>
 
                 <div className="w-[390px] h-[100%] mb-[30px] rounded-lg flex-col overflow-hidden shadow-md object-fit: cover relative">
-                    <img src="https://media.istockphoto.com/id/1265268905/photo/barbecue-chicken-jollof-rice.jpg?s=612x612&w=0&k=20&c=ohtrgIislco_-79g8I6AijYUJ2Yt923weh029-N7MUE=" alt="" className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105" />
+                    <img src="https://media.istockphoto.com/id/1265268905/photo/barbecue-chicken-jollof-rice.jpg?s=612x612&w=0&k=20&c=ohtrgIislco_-79g8I6AijYUJ2Yt923weh029-N7MUE=" alt="" className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105 object-cover" />
                     
                     <div className="w-[100%] p-[12px] flex-col">
                         <div className="w-[100%] flex items-center justify-between">
@@ -102,7 +102,7 @@ const Recipies = () => {
                 </div>
 
                 <div className="w-[390px] h-[100%] mb-[30px] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative">
-                    <img src="https://media.istockphoto.com/id/1398349816/photo/oha-soup.jpg?s=612x612&w=0&k=20&c=9IMVj6aGvW62S3R11KcTk5TptUaTq1gF-W0wWQtV3HA=" alt="" className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105" />
+                    <img src="https://media.istockphoto.com/id/1398349816/photo/oha-soup.jpg?s=612x612&w=0&k=20&c=9IMVj6aGvW62S3R11KcTk5TptUaTq1gF-W0wWQtV3HA=" alt="" className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105 object-cover" />
                     
                     <div className="w-[100%] p-[12px] flex-col">
                         <div className="w-[100%] flex items-center justify-between">
@@ -134,7 +134,7 @@ const Recipies = () => {
                 </div>
                 
                 <div className="w-[390px] h-[100%] mb-[30px] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative">
-                    <img src="https://media.istockphoto.com/id/1398349816/photo/oha-soup.jpg?s=612x612&w=0&k=20&c=9IMVj6aGvW62S3R11KcTk5TptUaTq1gF-W0wWQtV3HA=" alt="" className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105" />
+                    <img src="https://media.istockphoto.com/id/1398349816/photo/oha-soup.jpg?s=612x612&w=0&k=20&c=9IMVj6aGvW62S3R11KcTk5TptUaTq1gF-W0wWQtV3HA=" alt="" className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105 object-cover" />
                     
                     <div className="w-[100%] p-[12px] flex-col">
                         <div className="w-[100%] flex items-center justify-between">
@@ -166,7 +166,7 @@ const Recipies = () => {
                 </div>
 
                   <div className="w-[390px] h-[100%] mb-[30px] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative">
-                    <img src="https://media.istockphoto.com/id/1398349816/photo/oha-soup.jpg?s=612x612&w=0&k=20&c=9IMVj6aGvW62S3R11KcTk5TptUaTq1gF-W0wWQtV3HA=" alt="" className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105" />
+                    <img src="https://media.istockphoto.com/id/1398349816/photo/oha-soup.jpg?s=612x612&w=0&k=20&c=9IMVj6aGvW62S3R11KcTk5TptUaTq1gF-W0wWQtV3HA=" alt="" className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105 object-cover" />
                     
                     <div className="w-[100%] p-[12px] flex-col">
                         <div className="w-[100%] flex items-center justify-between">
@@ -198,7 +198,7 @@ const Recipies = () => {
                   </div>
                   
                   <div className="w-[390px] h-[100%] mb-[30px] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative">
-                    <img src="https://media.istockphoto.com/id/1398349816/photo/oha-soup.jpg?s=612x612&w=0&k=20&c=9IMVj6aGvW62S3R11KcTk5TptUaTq1gF-W0wWQtV3HA=" alt="" className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105" />
+                    <img src="https://media.istockphoto.com/id/1398349816/photo/oha-soup.jpg?s=612x612&w=0&k=20&c=9IMVj6aGvW62S3R11KcTk5TptUaTq1gF-W0wWQtV3HA=" alt="" className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105 object-cover" />
                     
                     <div className="w-[100%] p-[12px] flex-col">
                         <div className="w-[100%] flex items-center justify-between">

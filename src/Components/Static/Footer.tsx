@@ -2,33 +2,6 @@
 
 const Footer = () => {
 
-     const footerNavs = [
-        {
-            href: 'javascript:void()',
-            name: 'About'
-        },
-        {
-            href: 'javascript:void()',
-            name: 'Blog'
-        },
-        {
-            href: 'javascript:void()',
-            name: ''
-        },
-        {
-            href: 'javascript:void()',
-            name: 'Team'
-        },
-        {
-            href: 'javascript:void()',
-            name: 'Careers'
-        },
-
-        {
-            href: 'javascript:void()',
-            name: 'Suuport'
-        }
-    ]
   return (
      <footer className="w-[100%] h-[100%] flex bg-footer bg-no-repeat bg-center bg-cover mt-[80px]">
           <div
