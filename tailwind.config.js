@@ -39,7 +39,9 @@ export default {
 
         'venture': "url('https://media.istockphoto.com/id/1394055240/photo/happy-black-female-chef-preparing-food-in-frying-pan-at-restaurant-kitchen.jpg?s=612x612&w=0&k=20&c=6DjpoYqgYVDLmtj3-q7H7wvoiwkVgzi1rn7a_XUZ_Ng=')",
 
-        'footer': "url('https://media.istockphoto.com/id/1312307361/photo/rosemary-pepper-and-salt-cooking-border.jpg?s=612x612&w=0&k=20&c=6LqSjh4Qc_pmmUm1wa73AOPgDV5aBS9zbV90LisJ3M0=')"
+        'footer': "url('https://media.istockphoto.com/id/1312307361/photo/rosemary-pepper-and-salt-cooking-border.jpg?s=612x612&w=0&k=20&c=6LqSjh4Qc_pmmUm1wa73AOPgDV5aBS9zbV90LisJ3M0=')",
+
+        'recipehero': "url('https://media.istockphoto.com/id/1496340376/photo/spices-herbs-and-condiments-on-wooden-table.jpg?s=612x612&w=0&k=20&c=xAE3sLXUkgS6gE3C8WsoR8GLzecqfP62o2GrWwxGa48=')"
       },
       colors: {
         'first': '#210535',
