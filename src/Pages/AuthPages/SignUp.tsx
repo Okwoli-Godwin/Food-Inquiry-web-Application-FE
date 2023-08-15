@@ -1,9 +1,12 @@
+
 import { FcGoogle } from "react-icons/fc"
 import { BsFacebook, BsTwitter } from "react-icons/bs"
 import {NavLink} from "react-router-dom"
 
-const SignUp = () => {
+
+const SignupForm: React.FC = () => {
   return (
+
     <div className="w-[100%] h-[100%] bg-signinbg bg-no-repeat bg-center bg-cover">
       <div className="w-[100%] flex justify-between h-[100%] pt-[66px] pb-[66px] items-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
         
@@ -52,7 +55,7 @@ const SignUp = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignupForm;
