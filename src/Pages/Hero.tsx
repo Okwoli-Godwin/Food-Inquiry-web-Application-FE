@@ -32,7 +32,7 @@ const Hero = () => {
                             <CiSearch />
                         </div>
                     </div>
-                    <input type="text" className="flex-1 h-[100%] border-none outline-none" placeholder="Search recipes......"/>
+                    {/* <input type="text" className="flex-1 h-[100%] border-none outline-none" placeholder="Search recipes......"/> */}
                 </div>
             </div>
             </div>
@@ -54,7 +54,7 @@ const Hero = () => {
                             <CiSearch />
                         </div>
                     </div>
-                    <input type="text" className="flex-1 h-[100%] border-none outline-none" placeholder="Search recipes......"/>
+                    <input  className="flex-1 h-[100%] border-none outline-none" placeholder="Search recipes......"/>
                 </div>
             </div>
             </div>
