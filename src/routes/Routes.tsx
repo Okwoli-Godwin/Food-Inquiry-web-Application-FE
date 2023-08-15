@@ -5,6 +5,7 @@ import SignIn from "../Pages/AuthPages/SignIn";
 import SignUp from "../Pages/AuthPages/SignUp";
 import SingleRecipe from "../Pages/SingleRecipe";
 import Recipies from "../Pages/Recipies";
+import Contact from "../Pages/Contact";
 
 export const main = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ export const main = createBrowserRouter([
       {
         path: "/recipies",
         element: <Recipies />
+      },
+      {
+        path: "/contact-us",
+        element: <Contact />
       }
     ],
   },
