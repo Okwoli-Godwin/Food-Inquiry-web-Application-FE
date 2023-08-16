@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 
 
 
@@ -11,7 +12,9 @@ const Adventure = () => {
                     On a cold winter night, brighten up your table with a big, colorful mix of Recipies.
                 </p>
 
-                <button className="w-[230px] h-[50px] mt-[20px] text-[#fff] bg-third rounded flex justify-center items-center">View Restaurants</button>
+                <NavLink to="/search-restaurants">
+                    <button className="w-[230px] h-[50px] mt-[20px] text-[#fff] bg-third rounded flex justify-center items-center">View Restaurants</button>
+                </NavLink>
             </div>
         </div>
     )
