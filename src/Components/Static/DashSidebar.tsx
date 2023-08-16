@@ -58,7 +58,7 @@ const DashSidebar = () => {
               <Navprop
                 text={show ? "New Recipe" : ""}
                 icon={<MdOutlinePayment />}
-                route=""
+                route="/all-users"
                 color="white"
                 size={show ? "xl" : "4xl"}
               />
