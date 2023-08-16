@@ -22,7 +22,7 @@ const Navprop: FC<navpropsData> = ({ text, icon, route, color, size }) => {
         <p className={`text-${size} mb-[0.17rem] pl-1 text-${color}`}>{icon}</p>
 
         {/* nav */}
-        <p className="max-lg:hidden text-sm">{text}</p>
+        <p className="max-lg:hidden text-sm text-white">{text}</p>
       </NavLink>
     </div>
   );

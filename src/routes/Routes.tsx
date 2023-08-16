@@ -6,6 +6,9 @@ import SignUp from "../Pages/AuthPages/SignUp";
 import SingleRecipe from "../Pages/SingleRecipe";
 import Dashboard from "../Components/Layout/Dashboard";
 import NewRecipe from "../Pages/dashbpord/newRecipe";
+import Recipies from "../Pages/Recipies";
+import Contact from "../Pages/Contact";
+import Restaurant from "../Pages/Restaurant";
 
 export const main = createBrowserRouter([
   {
@@ -19,6 +22,18 @@ export const main = createBrowserRouter([
       {
         path: "/recipe/:id",
         element: <SingleRecipe />,
+      },
+      {
+        path: "/recipies",
+        element: <Recipies />,
+      },
+      {
+        path: "/contact-us",
+        element: <Contact />,
+      },
+      {
+        path: "/search-restaurants",
+        element: <Restaurant />,
       },
     ],
   },

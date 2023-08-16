@@ -11,7 +11,7 @@ const DashSidebar = () => {
   return (
     <div
       className={`${
-        show ? "w-[200px] bg-gradient-to-b from-first" : "w-[80px] bg-first"
+        show ? "w-[200px] bg-first" : "w-[80px] bg-first"
       }  flex items-center relative justify-center  transition-all ease-linear duration-[200ms]  max-md:hidden max-lg:hidden max-md:w-full h-screen max-md:h-full max-lg:w-[8%]`}
     >
       <div
@@ -73,20 +73,11 @@ const DashSidebar = () => {
                 show ? "items-start" : "items-center text-3xl gap-7"
               } transition-all ease-in duration-200`}
             >
-              <a href="mailto:isaacetor7@gmail.com">
-                <Navprop
-                  text={show ? "support" : ""}
-                  icon={<BiHeart />}
-                  route=""
-                  color={show ? "[#ff6e00]" : "white"}
-                  size={show ? "xl" : "4xl"}
-                />
-              </a>
               <Navprop
                 text={show ? "log out" : ""}
                 icon={<RiLogoutCircleLine />}
                 route=""
-                color={show ? "[#ff6e00]" : "white"}
+                color="white"
                 size={show ? "xl" : "4xl"}
               />
             </div>
