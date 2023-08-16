@@ -4,6 +4,8 @@ import Homescreen from "../Pages/Homescreen";
 import SignIn from "../Pages/AuthPages/SignIn";
 import SignUp from "../Pages/AuthPages/SignUp";
 import SingleRecipe from "../Pages/SingleRecipe";
+import Dashboard from "../Components/Layout/Dashboard";
+import NewRecipe from "../Pages/dashbpord/newRecipe";
 
 export const main = createBrowserRouter([
   {
@@ -17,6 +19,16 @@ export const main = createBrowserRouter([
       {
         path: "/recipe/:id",
         element: <SingleRecipe />,
+      },
+    ],
+  },
+  {
+    path: "/new-recipe",
+    element: <Dashboard />,
+    children: [
+      {
+        index: true,
+        element: <NewRecipe />,
       },
     ],
   },
