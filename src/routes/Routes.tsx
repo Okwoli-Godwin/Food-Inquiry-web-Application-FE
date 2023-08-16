@@ -9,6 +9,7 @@ import NewRecipe from "../Pages/dashbpord/newRecipe";
 import Recipies from "../Pages/Recipies";
 import Contact from "../Pages/Contact";
 import Restaurant from "../Pages/Restaurant";
+import AllUsers from "../Pages/dashbpord/AllUsers";
 
 export const main = createBrowserRouter([
   {
@@ -37,6 +38,16 @@ export const main = createBrowserRouter([
       },
     ],
   },
+
+  {
+    path: "/sign-in",
+    element: <SignIn />,
+  },
+  {
+    path: "/sign-up",
+    element: <SignUp />,
+  },
+
   {
     path: "/new-recipe",
     element: <Dashboard />,
@@ -45,14 +56,10 @@ export const main = createBrowserRouter([
         index: true,
         element: <NewRecipe />,
       },
+      {
+        path: "/new-recipe/all-users",
+        element: <AllUsers />,
+      },
     ],
-  },
-  {
-    path: "/sign-in",
-    element: <SignIn />,
-  },
-  {
-    path: "/sign-up",
-    element: <SignUp />,
   },
 ]);
