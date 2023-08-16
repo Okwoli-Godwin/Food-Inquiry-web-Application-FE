@@ -16,7 +16,7 @@ const SingleRecipe = () => {
       </div>
           </div>
 
-      {/* recipe */}
+      
       
     </>
   );
