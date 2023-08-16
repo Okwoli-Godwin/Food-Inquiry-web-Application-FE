@@ -6,7 +6,7 @@ const newRecipe = () => {
         Create Recipe
       </div>
 
-      <div className="grid mx-5 gap-5 grid-cols-[1fr,0.5fr]  lg:grid-cols-1">
+      <div className="grid mx-5 gap-32 grid-cols-[1fr,0.5fr]  lg:grid-cols-1 lg:gap-10 ">
         {/* post */}
         <div className=" flex flex-col gap-16">
           {/* title */}
@@ -31,9 +31,28 @@ const newRecipe = () => {
         </div>
 
         {/* sidebar */}
-        <div className="bg-blue-500">
+        <div className=" flex flex-col gap-5 lg:mb-5">
           {/* featured image */}
-          <div className="w-[full] h-[40vh] bg-[#f1f1f1] rounded-md "></div>
+          <div className="w-[full] py-3 px-4  flex flex-col gap-6 items-start bg-[#f1f1f1] rounded-md border overflow-hidden">
+            <div className="h-[80%] w-full">
+              <img
+                src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg?w=400&h=300&c=crop"
+                alt="featured image"
+                className="w-full h-full object-cover object-top rounded-md"
+              />
+            </div>
+            <button className="bg-first py-3 px-4 rounded-md text-white">
+              featured image
+            </button>
+          </div>
+
+          {/* post recipe */}
+          <div className="w-[full] py-3 px-4  flex flex-col gap-6 items-start bg-[#f1f1f1] rounded-md border overflow-hidden">
+            <p>title of post</p>
+            <button className="bg-first py-3 px-4 rounded-md text-white">
+              publish recipe
+            </button>
+          </div>
         </div>
       </div>
     </div>

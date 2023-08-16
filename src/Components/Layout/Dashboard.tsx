@@ -3,8 +3,11 @@ import DashSidebar from "../Static/DashSidebar";
 
 const Dashboard = () => {
   return (
-    <div className="flex ">
-      <DashSidebar />
+    <div className="flex h-full">
+      <div className="sticky top-0">
+        <DashSidebar />
+      </div>
+
       <Outlet />
     </div>
   );
