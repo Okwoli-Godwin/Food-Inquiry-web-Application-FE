@@ -6,6 +6,7 @@ import SignUp from "../Pages/AuthPages/SignUp";
 import SingleRecipe from "../Pages/SingleRecipe";
 import Recipies from "../Pages/Recipies";
 import Contact from "../Pages/Contact";
+import Restaurant from "../Pages/Restaurant";
 
 export const main = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ export const main = createBrowserRouter([
       {
         path: "/contact-us",
         element: <Contact />
+      },
+      {
+        path: "/search-restaurants",
+        element: <Restaurant />
       }
     ],
   },
