@@ -1,7 +1,6 @@
-import { MdDashboard, MdOutlinePayment, MdManageHistory } from "react-icons/md";
-import { BiHeart } from "react-icons/bi";
+import { MdDashboard, MdOutlinePayment } from "react-icons/md";
 import { RiLogoutCircleLine } from "react-icons/ri";
-import { BsArrowLeftRight, BsReceipt } from "react-icons/bs";
+import { BsArrowLeftRight } from "react-icons/bs";
 import { useState } from "react";
 import Navprop from "../../Components/common/Navprop";
 
