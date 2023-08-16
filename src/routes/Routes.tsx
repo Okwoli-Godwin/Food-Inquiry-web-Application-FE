@@ -4,9 +4,12 @@ import Homescreen from "../Pages/Homescreen";
 import SignIn from "../Pages/AuthPages/SignIn";
 import SignUp from "../Pages/AuthPages/SignUp";
 import SingleRecipe from "../Pages/SingleRecipe";
+import Dashboard from "../Components/Layout/Dashboard";
+import NewRecipe from "../Pages/dashbpord/newRecipe";
 import Recipies from "../Pages/Recipies";
 import Contact from "../Pages/Contact";
 import Restaurant from "../Pages/Restaurant";
+import AllUsers from "../Pages/dashbpord/AllUsers";
 
 export const main = createBrowserRouter([
   {
@@ -23,18 +26,19 @@ export const main = createBrowserRouter([
       },
       {
         path: "/recipies",
-        element: <Recipies />
+        element: <Recipies />,
       },
       {
         path: "/contact-us",
-        element: <Contact />
+        element: <Contact />,
       },
       {
         path: "/search-restaurants",
-        element: <Restaurant />
-      }
+        element: <Restaurant />,
+      },
     ],
   },
+
   {
     path: "/sign-in",
     element: <SignIn />,
@@ -42,5 +46,20 @@ export const main = createBrowserRouter([
   {
     path: "/sign-up",
     element: <SignUp />,
+  },
+
+  {
+    path: "/new-recipe",
+    element: <Dashboard />,
+    children: [
+      {
+        index: true,
+        element: <NewRecipe />,
+      },
+      {
+        path: "/new-recipe/all-users",
+        element: <AllUsers />,
+      },
+    ],
   },
 ]);
