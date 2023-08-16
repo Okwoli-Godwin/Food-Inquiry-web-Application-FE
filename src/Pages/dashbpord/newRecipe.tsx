@@ -36,7 +36,6 @@ const newRecipe = () => {
     mutationFn: createRecipes,
 
     onSuccess: (data: any) => {
-      console.log("data", data);
       Swal.fire({
         title: "Recipe Created",
         html: "Thank You",
@@ -47,7 +46,6 @@ const newRecipe = () => {
     },
 
     onError: (error: any) => {
-      console.log("error", error);
       if (error.message === "Network Error") {
         Swal.fire({
           title: error.message,
@@ -139,7 +137,7 @@ const newRecipe = () => {
               type="submit"
               className="bg-first py-3 px-4 rounded-md text-white"
             >
-              publish recipe
+              {postData?.isLoading ? "Loading..." : "publish recipe"}
             </button>
           </div>
         </div>
