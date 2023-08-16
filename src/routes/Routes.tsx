@@ -4,6 +4,8 @@ import Homescreen from "../Pages/Homescreen";
 import SignIn from "../Pages/AuthPages/SignIn";
 import SignUp from "../Pages/AuthPages/SignUp";
 import SingleRecipe from "../Pages/SingleRecipe";
+import Dashboard from "../Components/Layout/Dashboard";
+import NewRecipe from "../Pages/dashbpord/newRecipe";
 import Recipies from "../Pages/Recipies";
 import Contact from "../Pages/Contact";
 import Restaurant from "../Pages/Restaurant";
@@ -23,16 +25,26 @@ export const main = createBrowserRouter([
       },
       {
         path: "/recipies",
-        element: <Recipies />
+        element: <Recipies />,
       },
       {
         path: "/contact-us",
-        element: <Contact />
+        element: <Contact />,
       },
       {
         path: "/search-restaurants",
-        element: <Restaurant />
-      }
+        element: <Restaurant />,
+      },
+    ],
+  },
+  {
+    path: "/new-recipe",
+    element: <Dashboard />,
+    children: [
+      {
+        index: true,
+        element: <NewRecipe />,
+      },
     ],
   },
   {
