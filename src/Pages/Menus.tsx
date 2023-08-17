@@ -24,12 +24,10 @@ const Menus = () => {
     setShow3(!show3);
   };
 
-  const data = useQuery({
+  const usdAmount = 500.0;
+  const { data, isLoading } = useQuery({
     queryFn: getAllRcipes,
   });
-  console.log("data", data);
-
-  const usdAmount = 500.0;
 
   //   const [amountInDollars, setAmountInDollars] = useState<number>();
   //   useEffect(() => {
@@ -70,9 +68,9 @@ const Menus = () => {
       <h3 className="text-[40px]">Recipies</h3>
 
       <div className="w-[95%] flex h-[100%] mt-[35px] flex-wrap justify-between lg:justify-center">
-        {data?.isLoading
-          ? "Loading"
-          : data?.data?.slice(0, 3)?.map((e: any) => (
+        {isLoading
+          ? "Loading..."
+          : data?.data?.data?.slice(0, 3).map((e: any) => (
               <div className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative">
                 <img
                   src={e.foodImg}
@@ -110,7 +108,7 @@ const Menus = () => {
                     </div>
                   ) : null}
 
-                  <p className="mt-[5px]">Calories: {e.calories} carbs</p>
+                  <p className="mt-[5px]">Calories: {e.calorie} carbs</p>
 
                   <button className="w-[100%] h-[40px] bg-third text-[#fff] cursor-pointer rounded mt-[20px]">
                     View Recipies

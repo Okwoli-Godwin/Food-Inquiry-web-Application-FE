@@ -15,7 +15,5 @@ export const searchRcipes = async (searchValue: string) => {
     .then((res) => res);
 };
 export const getAllRcipes = async () => {
-  return await axios
-    .get(`${url}/viewallrecipes`)
-    .then((res) => res?.data?.data);
+  return await axios.get(`${url}/viewallrecipes`).then((res) => res);
 };

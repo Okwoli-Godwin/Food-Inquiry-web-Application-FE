@@ -1,12 +1,9 @@
+import React, { useState, useEffect } from "react";
 import { CiSearch } from "react-icons/ci";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Hero2 from "./Hero2";
-import Hero3 from "./Hero3";
-import { useMutation } from "react-query";
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
 import { searchRcipes } from "../apis/RecipiesApi/RecipiesApi";
 
 const Hero = () => {
@@ -19,10 +16,19 @@ const Hero = () => {
   };
 
   const [search, setSearch] = useState("");
+  const [isInputFocused, setInputFocused] = useState(false);
 
-  const data = useQuery({
-    queryFn: () => searchRcipes(search),
+  const { data, isLoading } = useQuery({
+    queryFn: () => searchRcipes(isInputFocused ? "" : search),
   });
+
+  console.log("data", isLoading ? "Loading..." : data);
+
+  const handleKeyDown = (e: any) => {
+    if (e.key === "Enter") {
+      setSearch(e.target.value);
+    }
+  };
 
   return (
     <section style={{ overflow: "hidden" }}>
@@ -51,6 +57,9 @@ const Hero = () => {
                   </div>
                 </div>
                 <input
+                  onFocus={() => setInputFocused(true)}
+                  onBlur={() => setInputFocused(false)}
+                  onKeyDown={handleKeyDown} // Listen for Enter key press
                   onChange={(e) => {
                     setSearch(e.target.value);
                   }}
@@ -62,10 +71,6 @@ const Hero = () => {
             </div>
           </div>
         </div>
-
-        {/* <Hero2 />
-
-        <Hero3 /> */}
       </Slider>
     </section>
   );

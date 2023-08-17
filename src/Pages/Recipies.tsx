@@ -21,7 +21,7 @@ const Recipies = () => {
 
   const usdAmount = 500.0;
 
-  const data = useQuery({
+  const { data, isLoading } = useQuery({
     queryFn: getAllRcipes,
   });
 
@@ -43,9 +43,9 @@ const Recipies = () => {
 
       <div className="w-[100%] flex justify-center">
         <div className="w-[95%] flex h-[100%] mt-[65px] flex-wrap justify-between md:justify-center">
-          {data?.isLoading
+          {isLoading
             ? "Loading..."
-            : data?.data?.map((e: any) => (
+            : data?.data?.data?.map((e: any) => (
                 <div className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative">
                   <img
                     src={e.foodImg}
@@ -83,7 +83,7 @@ const Recipies = () => {
                       </div>
                     ) : null}
 
-                    <p className="mt-[5px]">Calories: {e.calories} carbs</p>
+                    <p className="mt-[5px]">Calories: {e.calorie} carbs</p>
 
                     <button className="w-[100%] h-[40px] bg-third text-[#fff] cursor-pointer rounded mt-[20px]">
                       View Recipies
