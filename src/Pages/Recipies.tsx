@@ -48,7 +48,7 @@ const Recipies = () => {
             : data?.data?.map((e: any) => (
                 <div className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative">
                   <img
-                    src={foodImg}
+                    src={e.foodImg}
                     alt=""
                     className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105"
                   />
