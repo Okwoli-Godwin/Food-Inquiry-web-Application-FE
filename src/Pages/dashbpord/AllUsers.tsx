@@ -1,36 +1,39 @@
+import { useQuery } from "@tanstack/react-query";
+import { viewAllUser } from "../../apis/UserApi/userApi";
+
 const AllUsers = () => {
   const tableItems = [
     {
       name: "Liam James",
       email: "liamjames@example.com",
-      reg_Date: "Software engineer",
-      salary: "$100K",
+      reg_Date: "........",
     },
     {
       name: "Olivia Emma",
       email: "oliviaemma@example.com",
-      reg_Date: "Product designer",
-      salary: "$90K",
+      reg_Date: "........",
     },
     {
       name: "William Benjamin",
       email: "william.benjamin@example.com",
-      reg_Date: "Front-end developer",
-      salary: "$80K",
+      reg_Date: "........",
     },
     {
       name: "Henry Theodore",
       email: "henrytheodore@example.com",
-      reg_Date: "Laravel engineer",
-      salary: "$120K",
+      reg_Date: "........",
     },
     {
       name: "Amelia Elijah",
       email: "amelia.elijah@example.com",
-      reg_Date: "Open source manager",
-      salary: "$75K",
+      reg_Date: "........",
     },
   ];
+
+  const data = useQuery({
+    queryFn: viewAllUser,
+  });
+
   return (
     <div className=" h-screen w-full flex flex-col gap-8  ">
       <div className="w-full py-5 text-xl bg-first text-white border-b">
@@ -53,22 +56,20 @@ const AllUsers = () => {
                   <th className="py-3 px-6">Username</th>
                   <th className="py-3 px-6">Email</th>
                   <th className="py-3 px-6">Register Date</th>
-                  <th className="py-3 px-6">Salary</th>
                   <th className="py-3 px-6"></th>
                 </tr>
               </thead>
               <tbody className="text-gray-600 divide-y">
-                {tableItems.map((item, idx) => (
-                  <tr key={idx}>
-                    <td className="px-6 py-4 whitespace-nowrap">{item.name}</td>
+                {data?.data?.map((item: any) => (
+                  <tr key={item?._id}>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      {item.fullname}
+                    </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       {item.email}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       {item.reg_Date}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      {item.salary}
                     </td>
                     <td className="text-right px-6 whitespace-nowrap">
                       <a

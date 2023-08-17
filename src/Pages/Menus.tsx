@@ -1,12 +1,16 @@
 import {BsStarFill, BsStarHalf} from "react-icons/bs"
 import { NavLink } from "react-router-dom"
-import {useState} from "react"
-
+import {useState,useEffect} from "react"
+import axios from "axios"
+import food from "./Food"
 const Menus = () => {
 
     const [show, setShow] = useState(false)
     const [show2, setShow2] = useState(false)
     const [show3, setShow3] = useState(false)
+    const [amountNaira, setAmountNaira] = useState();
+    const [amountDollar, setamountDollar] = useState();
+    const [showInDollar, setShowInDollar] = useState();
 
     const Toggle = () => {
         setShow(!show);
@@ -17,8 +21,47 @@ const Menus = () => {
     const Toggle3 = () => {
         setShow3(!show3);
     }
+    const usdAmount = 6000;
 
-    const usdAmount = 500.00;
+  const [amountInDollars,setAmountInDollars] = useState<number>()
+    useEffect(()=>{
+     async function convertNairaToDollars(){
+        
+
+         try {
+            
+             const response = await axios.get("your bakend uri")
+             const nairaAmount = response.data.amountInNaira;
+             setAmountNaira(nairaAmount);
+
+             //cal the equil amount in dollars
+             const API_KEY = "8eaec5c5ca204ea1a5fcff24614e6fb7";
+           const FROM_CURRENCY = "NGN";
+             const TO_CURRENCY = "USD";
+        const apiUrl = `https://openexchangerates.org/api/latest.json?app_id=${API_KEY}`
+        //    const AMOUNT_IN_NAIRA = usdAmount;
+             const exchangeRateResponse =await axios.get(apiUrl);
+            const exchangeRate = exchangeRateResponse.data.rates;
+            const naraToDollarRates = exchangeRate[TO_CURRENCY]/exchangeRate[FROM_CURRENCY];
+            const amountInDollars = nairaAmount * naraToDollarRates;
+
+            setAmountInDollars(amountInDollars)
+        } catch (error) {
+            console.log("error fetching exchange")
+            return null;
+        }
+     }
+
+
+
+
+    convertNairaToDollars();
+    },[])
+
+
+{
+// amountInDollars?.toFixed(2)
+}
 
     return (
     <div className="w-[100%] flex h-[100%] flex-col pt-[50px] items-center">
@@ -45,12 +88,12 @@ const Menus = () => {
 
                         <div className="flex items-center mt-[5px]">
                             <p>₦1000</p>
-                            <button onClick={Toggle} className="border border-third w-[170px] h-[40px] rounded ml-[12px]">Click to see USD price</button>
+                            <button onClick={()=>setShowInDollar} className="border border-third w-[170px] h-[40px] rounded ml-[12px]">Click to see USD price</button>
                         </div>
 
                         {show ? (
                             <div className="absolute w-[160px] h-[150px] bg-white shadow-sm top-[150px] left-[100px] rounded-sm transition-transform duration-300 flex flex-col justify-center items-center">
-                                <h2 className="text-2xl font-bold text-gray-800 mb-2">$ {usdAmount.toFixed(2)}</h2>
+                                <h2 className="text-2xl font-bold text-gray-800 mb-2">$ {amountInDollars?.toFixed(2)}</h2>
         <p className="text-sm text-gray-500">Total USD</p>
                         </div>
                         ) : null}
@@ -84,7 +127,7 @@ const Menus = () => {
 
                         {show2 ? (
                             <div className="absolute w-[160px] h-[150px] bg-white shadow-sm top-[150px] left-[100px] rounded-sm transition-transform duration-300 flex flex-col justify-center items-center">
-                                <h2 className="text-2xl font-bold text-gray-800 mb-2">$ {usdAmount.toFixed(2)}</h2>
+                                <h2 className="text-2xl font-bold text-gray-800 mb-2">$ {amountInDollars?.toFixed(2)}</h2>
                                 <p className="text-sm text-gray-500">Total USD</p>
                         </div>
                         ) : null}
@@ -116,7 +159,7 @@ const Menus = () => {
 
                         {show3 ? (
                             <div className="absolute w-[160px] h-[150px] bg-white shadow-sm top-[150px] left-[100px] rounded-sm transition-transform duration-300 flex flex-col justify-center items-center">
-                                <h2 className="text-2xl font-bold text-gray-800 mb-2">$ {usdAmount.toFixed(2)}</h2>
+                                <h2 className="text-2xl font-bold text-gray-800 mb-2">$ {amountInDollars?.toFixed(2)}</h2>
                                 <p className="text-sm text-gray-500">Total USD</p>
                         </div>
                         ) : null}

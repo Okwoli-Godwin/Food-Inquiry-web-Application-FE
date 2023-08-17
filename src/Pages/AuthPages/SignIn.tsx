@@ -8,8 +8,22 @@ import { useMutation } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import { userLogin } from "../../apis/UserApi/userApi";
 import { MoonLoader } from "react-spinners";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react"
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { Admin } from "../../apis/ReduxState";
 
 const SignIn = () => {
+  const dispatch = useDispatch();
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate()
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
   const schema: any = yup
     .object({
       email: yup.string().required("Please Enter your email"),
@@ -32,6 +46,7 @@ const SignIn = () => {
     mutationFn: userLogin,
 
     onSuccess: (data) => {
+      dispatch(Admin(data?.data))
       Swal.fire({
         title: "Sign In Successfull",
         html: "Thank You",
@@ -39,10 +54,12 @@ const SignIn = () => {
         icon: "success",
       });
       reset();
+      navigate("/")
     },
 
     // If an error occured:
     onError: (error: any) => {
+      console.log("error message", error)
       if (error.message === "Network Error") {
         Swal.fire({
           title: error.message,
@@ -98,13 +115,21 @@ const SignIn = () => {
               placeholder="Email"
               className="h-[48px] w-[100%] border border-gray-400 pl-[15px] outline-none rounded mt-[40px]"
             />
-            <input
-              required
-              {...register("password")}
-              type="text"
-              placeholder="Password"
-              className="h-[48px] w-[100%] border border-gray-400 pl-[15px] outline-none rounded mt-[40px]"
-            />
+            <div className="flex items-center w-[100%] border border-gray-400 h-[48px] mt-[20px] rounded pr-[10px]">
+              <input
+                required
+                {...register("password")}
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                className="h-[100%] w-[100%]  pl-[15px] outline-none  "
+              />
+              <div
+                onClick={togglePasswordVisibility}
+                className="cursor-pointer"
+              >
+                {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+              </div>
+            </div>
 
             <h3 className="text-[17px] font-semibold mt-[20px]">
               Forgot password
