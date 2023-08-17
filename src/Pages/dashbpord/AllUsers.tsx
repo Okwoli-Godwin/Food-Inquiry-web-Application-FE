@@ -6,32 +6,27 @@ const AllUsers = () => {
     {
       name: "Liam James",
       email: "liamjames@example.com",
-      reg_Date: "Software engineer",
-      salary: "$100K",
+      reg_Date: "........",
     },
     {
       name: "Olivia Emma",
       email: "oliviaemma@example.com",
-      reg_Date: "Product designer",
-      salary: "$90K",
+      reg_Date: "........",
     },
     {
       name: "William Benjamin",
       email: "william.benjamin@example.com",
-      reg_Date: "Front-end developer",
-      salary: "$80K",
+      reg_Date: "........",
     },
     {
       name: "Henry Theodore",
       email: "henrytheodore@example.com",
-      reg_Date: "Laravel engineer",
-      salary: "$120K",
+      reg_Date: "........",
     },
     {
       name: "Amelia Elijah",
       email: "amelia.elijah@example.com",
-      reg_Date: "Open source manager",
-      salary: "$75K",
+      reg_Date: "........",
     },
   ];
 
@@ -61,7 +56,6 @@ const AllUsers = () => {
                   <th className="py-3 px-6">Username</th>
                   <th className="py-3 px-6">Email</th>
                   <th className="py-3 px-6">Register Date</th>
-                  <th className="py-3 px-6">Salary</th>
                   <th className="py-3 px-6"></th>
                 </tr>
               </thead>
@@ -76,9 +70,6 @@ const AllUsers = () => {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       {item.reg_Date}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      {item.salary}
                     </td>
                     <td className="text-right px-6 whitespace-nowrap">
                       <a

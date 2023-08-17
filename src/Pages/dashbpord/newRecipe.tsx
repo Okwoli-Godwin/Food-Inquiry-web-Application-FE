@@ -22,6 +22,9 @@ const newRecipe = () => {
   const schema = yup
     .object({
       title: yup.string().required("Please Enter your title"),
+      amount: yup.number().required("Please Enter amount"),
+      calory: yup.number().required("Please Enter calory count"),
+      ingredients: yup.string().required("Please Enter ingredients"),
       nutritions: yup.string().required("Please Enter your nutritions"),
     })
     .required();
@@ -78,7 +81,7 @@ const newRecipe = () => {
   };
 
   return (
-    <div className="h-screen w-full flex flex-col gap-8">
+      <div className="h-screen w-[85.5%] flex flex-col gap-8">
       <div className="w-full py-5 text-xl bg-first text-white border-b">
         Create Recipe
       </div>
@@ -86,7 +89,7 @@ const newRecipe = () => {
         onSubmit={Submit}
         className="grid mx-5 gap-32 grid-cols-[1fr,0.5fr] lg:grid-cols-1 lg:gap-10"
       >
-        <div className="flex flex-col gap-16">
+        <div className="flex flex-col gap-10">
           <div>
             <p className="text-2xl font-semibold">Title</p>
             <input
@@ -97,13 +100,43 @@ const newRecipe = () => {
               placeholder="enter recipe title"
             />
           </div>
+          <div>
+            <p className="text-2xl font-semibold">Amount</p>
+            <input
+              type="text"
+              required
+              {...register("amount")}
+              className="w-full h-[10vh] text-xl pl-3 outline-none border-b"
+              placeholder="enter recipe amount"
+            />
+          </div>
+          <div>
+            <p className="text-2xl font-semibold">Calory count</p>
+            <input
+              type="number"
+              required
+              {...register("calory")}
+              className="w-full h-[10vh] text-xl pl-3 outline-none border-b"
+              placeholder="enter calory count"
+            />
+            </div>
+            <div className="flex flex-col gap-7">
+            <p className="text-2xl font-semibold">Ingredients</p>
+            <textarea
+              {...register("ingredients")}
+              required
+              placeholder="enter recipe ingredients"
+              className="w-full border-b outline-none text-xl h-[100px] resize-none"
+              rows={10}
+            />
+          </div>
           <div className="flex flex-col gap-7">
             <p className="text-2xl font-semibold">Recipe text</p>
             <textarea
               {...register("nutritions")}
               required
               placeholder="enter recipe description"
-              className="w-full border-b outline-none text-xl"
+              className="w-full border-b outline-none text-xl h-[100px] resize-none"
               rows={10}
             />
           </div>
