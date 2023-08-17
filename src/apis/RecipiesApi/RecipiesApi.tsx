@@ -7,10 +7,15 @@ export const createRecipes = async (recipes: any) => {
     .post(`${url}/createrecipe`, recipes)
     .then((res) => res.data);
 };
-export const searcheRcipes = async (searchValue: string) => {
+export const searchRcipes = async (searchValue: string) => {
   return await axios
     .get(
       `https://food-inquiry.onrender.com/api/recipes/viewAllSearchedRecipes?title=${searchValue}`
     )
     .then((res) => res);
+};
+export const getAllRcipes = async () => {
+  return await axios
+    .get(`${url}/viewallrecipes`)
+    .then((res) => res?.data?.data);
 };
