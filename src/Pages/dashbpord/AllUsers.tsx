@@ -1,3 +1,6 @@
+import { useQuery } from "@tanstack/react-query";
+import { viewAllUser } from "../../apis/UserApi/userApi";
+
 const AllUsers = () => {
   const tableItems = [
     {
@@ -31,6 +34,11 @@ const AllUsers = () => {
       salary: "$75K",
     },
   ];
+
+  const data = useQuery({
+    queryFn: viewAllUser,
+  });
+
   return (
     <div className=" h-screen w-full flex flex-col gap-8  ">
       <div className="w-full py-5 text-xl bg-first text-white border-b">
@@ -58,9 +66,11 @@ const AllUsers = () => {
                 </tr>
               </thead>
               <tbody className="text-gray-600 divide-y">
-                {tableItems.map((item, idx) => (
-                  <tr key={idx}>
-                    <td className="px-6 py-4 whitespace-nowrap">{item.name}</td>
+                {data?.data?.map((item: any) => (
+                  <tr key={item?._id}>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      {item.fullname}
+                    </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       {item.email}
                     </td>
