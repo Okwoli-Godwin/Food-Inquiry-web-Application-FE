@@ -11,7 +11,7 @@ const DashSidebar = () => {
     <div
       className={`${
         show ? "w-[200px] bg-first" : "w-[80px] bg-first"
-      }  flex items-center relative justify-center  transition-all ease-linear duration-[200ms]  max-md:hidden max-lg:hidden max-md:w-full h-screen max-md:h-full max-lg:w-[8%]`}
+      }  flex items-center relative justify-center  transition-all ease-linear duration-[200ms]  max-md:hidden max-lg:hidden max-md:w-full h-screen max-md:h-full max-lg:w-[8%] fixed`}
     >
       <div
         className={`${
