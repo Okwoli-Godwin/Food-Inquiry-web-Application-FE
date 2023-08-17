@@ -30,7 +30,7 @@ const Menus = () => {
 
          try {
             
-             const response:any = await axios.get(food)
+             const response = await axios.get("your bakend uri")
              const nairaAmount = response.data.amountInNaira;
              setAmountNaira(nairaAmount);
 

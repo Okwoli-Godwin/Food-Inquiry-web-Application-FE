@@ -11,8 +11,11 @@ import { MoonLoader } from "react-spinners";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react"
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { Admin } from "../../apis/ReduxState";
 
 const SignIn = () => {
+  const dispatch = useDispatch();
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -43,6 +46,7 @@ const SignIn = () => {
     mutationFn: userLogin,
 
     onSuccess: (data) => {
+      dispatch(Admin(data?.data))
       Swal.fire({
         title: "Sign In Successfull",
         html: "Thank You",
@@ -55,6 +59,7 @@ const SignIn = () => {
 
     // If an error occured:
     onError: (error: any) => {
+      console.log("error message", error)
       if (error.message === "Network Error") {
         Swal.fire({
           title: error.message,

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { FcGoogle } from "react-icons/fc";
-import { BsFacebook, BsTwitter } from "react-icons/bs";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import * as yup from "yup";
@@ -60,7 +58,7 @@ const SignupForm: React.FC = () => {
         icon: "success",
       });
       reset();
-      navigate("/")
+      navigate("/sign-in")
     },
 
     // If an error occured:
