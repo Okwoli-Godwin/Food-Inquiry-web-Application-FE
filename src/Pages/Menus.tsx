@@ -77,7 +77,7 @@ const Menus = () => {
                 <img
                   src={e.foodImg}
                   alt=""
-                  className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105"
+                  className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105 object-cover"
                 />
 
                 <div className="w-[100%] p-[12px] flex-col">
