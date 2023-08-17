@@ -10,10 +10,13 @@ import { useMutation } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import { createUser } from "../../apis/UserApi/userApi";
 import { MoonLoader } from "react-spinners";
+import { useNavigate } from "react-router-dom";
 
 const SignupForm: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const navigate = useNavigate()
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -25,6 +28,7 @@ const SignupForm: React.FC = () => {
 
   const schema: any = yup
     .object({
+       fullname: yup.string().required("Please Enter your name"),
       email: yup.string().required("Please Enter your email"),
       password: yup.string().required("Please Enter your password"),
       confirmPassword: yup
@@ -56,6 +60,7 @@ const SignupForm: React.FC = () => {
         icon: "success",
       });
       reset();
+      navigate("/")
     },
 
     // If an error occured:
@@ -87,7 +92,7 @@ const SignupForm: React.FC = () => {
   return (
     <div className="w-[100%] h-[100%] bg-signinbg bg-no-repeat bg-center bg-cover">
       <div
-        className="w-[100%] flex justify-between h-[100%] pt-[65px] pb-[64px] items-center"
+        className="w-[100%] flex justify-between h-[100%] pt-[75px] pb-[75px] items-center"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
       >
         <div className="w-[55%] pl-[80px] flex-col flex">
@@ -108,11 +113,18 @@ const SignupForm: React.FC = () => {
           >
             <h3 className="text-[30px]">Sign up</h3>
             <input
+              {...register("fullname")}
+              required
+              type="text"
+              placeholder="yourname"
+              className="h-[48px] w-[100%] border border-gray-400 pl-[15px] outline-none rounded mt-[40px] "
+            />
+            <input
               {...register("email")}
               required
               type="email"
               placeholder="Email"
-              className="h-[48px] w-[100%] border border-gray-400 pl-[15px] outline-none rounded mt-[40px] "
+              className="h-[48px] w-[100%] border border-gray-400 pl-[15px] outline-none rounded mt-[20px] "
             />
             <div className="flex items-center w-[100%] border border-gray-400 h-[48px] mt-[20px] rounded pr-[10px]">
               <input
@@ -164,20 +176,6 @@ const SignupForm: React.FC = () => {
                 </span>
               </NavLink>
             </h3>
-            <div className="w-[100%] flex flex-col items-center mt-[25px]">
-              <h3>Or sign up with</h3>
-              <div className="mt-[18px] flex">
-                <div className="text-[22px] ml-[12px]">
-                  <FcGoogle />
-                </div>
-                <div className="text-[blue] text-[18px] ml-[12px]">
-                  <BsFacebook />
-                </div>
-                <div className="text-[lightblue] text-[19px] ml-[12px]">
-                  <BsTwitter />
-                </div>
-              </div>
-            </div>
           </form>
         </div>
       </div>
