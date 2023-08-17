@@ -16,8 +16,6 @@ const SingleRecipe = () => {
           <Recipe />
         </div>
       </div>
-
-      {/* recipe */}
     </>
   );
 };

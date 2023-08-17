@@ -27,8 +27,8 @@ const DashSidebar = () => {
               show ? "border-white" : "border-white w-full flex justify-center"
             } border rounded-full`}
           >
-            <div className="py-[1px] px-[6px] bg-third text-white  text-xl  rounded-full">
-              M
+            <div className="py-[1px] px-[7px] bg-third text-white  text-xl  rounded-full">
+              D
             </div>
           </div>
 
