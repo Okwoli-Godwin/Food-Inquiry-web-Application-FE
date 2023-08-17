@@ -1,4 +1,22 @@
+import { useState } from "react";
+
 const newRecipe = () => {
+  const [featuredImage, setFeaturedImage] = useState(
+    "https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg?w=400&h=300&c=crop"
+  );
+
+  const handleImageUpload = (event: any) => {
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        setFeaturedImage(e.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
     <div className=" h-screen w-full flex flex-col gap-8  ">
       <div className="w-full py-5 text-xl bg-first text-white border-b">
@@ -33,17 +51,27 @@ const newRecipe = () => {
         {/* sidebar */}
         <div className=" flex flex-col gap-5 lg:mb-5">
           {/* featured image */}
-          <div className="w-[full] py-3 px-4  flex flex-col gap-6 items-start bg-[#f1f1f1] rounded-md border overflow-hidden">
+          <div className="w-full py-3 px-4 flex flex-col gap-6 items-start bg-[#f1f1f1] rounded-md border overflow-hidden">
             <div className="h-[80%] w-full">
               <img
-                src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg?w=400&h=300&c=crop"
-                alt="featured image"
-                className="w-full h-full object-cover object-top rounded-md"
+                src={featuredImage}
+                alt="Featured"
+                className="w-full h-full object-cover rounded-md"
               />
             </div>
-            <button className="bg-first py-3 px-4 rounded-md text-white">
-              featured image
-            </button>
+            <label
+              htmlFor="image-input"
+              className="bg-first py-3 px-4 rounded-md text-white cursor-pointer"
+            >
+              Upload Featured Image
+            </label>
+            <input
+              type="file"
+              id="image-input"
+              accept="image/*"
+              className="hidden"
+              onChange={handleImageUpload}
+            />
           </div>
 
           {/* post recipe */}
