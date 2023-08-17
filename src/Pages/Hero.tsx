@@ -7,7 +7,7 @@ import Hero3 from "./Hero3";
 import { useMutation } from "react-query";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import { searcheRcipes } from "../apis/RecipiesApi/RecipiesApi";
+import { searchRcipes } from "../apis/RecipiesApi/RecipiesApi";
 
 const Hero = () => {
   const settings = {
@@ -21,9 +21,8 @@ const Hero = () => {
   const [search, setSearch] = useState("");
 
   const data = useQuery({
-    queryFn: () => searcheRcipes(search),
+    queryFn: () => searchRcipes(search),
   });
-
 
   return (
     <section style={{ overflow: "hidden" }}>
