@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "https://food-inquiry.onrender.com/api/recipes";
+const url = "https://food-inquiry.onrender.com/api/k";
 
 export const createRecipes = async (recipes: any) => {
   return await axios

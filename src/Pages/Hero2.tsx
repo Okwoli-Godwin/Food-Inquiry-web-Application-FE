@@ -1,6 +1,25 @@
-import {CiSearch} from "react-icons/ci"
+import { CiSearch } from "react-icons/ci"
+import { useQuery } from "@tanstack/react-query";
+import { getAllRcipes } from "../apis/RecipiesApi/RecipiesApi";
+import { Data } from "../apis/Allinterface";
+import {useState, useEffect} from "react"
 
-const Hero2 = () => {
+interface Props {
+  setsearchdata?: React.Dispatch<React.SetStateAction<Data[]>>;
+}
+
+const Hero2: React.FC<Props> = ({ setsearchdata }) => {
+
+  const [search, setSearch] = useState("");
+  const { data, isLoading } = useQuery({
+    queryFn: getAllRcipes,
+  });
+
+  useEffect(() => {
+  if (setsearchdata && data?.data?.data && Array.isArray(data?.data?.data)) {
+    setsearchdata(data?.data?.data?.filter((e: any) => e.title === search));
+  }
+}, [data, search, setsearchdata]);
   return (
     <div className="h-[100%] w-[100%] bg-hero2 bg-center bg-no-repeat bg-cover relative">
               <div className="w-[100%] h-[100%] pt-[200px] pb-[200px] flex justify-center items-center md:pt-[100px] md:pb-[100px]" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
@@ -18,7 +37,13 @@ const Hero2 = () => {
                             <CiSearch />
                         </div>
                     </div>
-                    <input  className="flex-1 h-[100%] border-none outline-none" placeholder="Search recipes......"/>
+                    <input  
+                      className="flex-1 h-[100%] border-none outline-none" 
+                      placeholder="Search recipes......"
+                      onChange={(e) => {
+                    setSearch(e.target.value);
+                  }}
+                      />
                 </div>
             </div>
             </div>

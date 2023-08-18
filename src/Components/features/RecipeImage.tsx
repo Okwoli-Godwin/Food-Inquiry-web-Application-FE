@@ -15,23 +15,23 @@ const RecipeImage = () => {
         <img
           src={data?.data?.data?.foodImg}
           alt="main image"
-          className="object-cover object-top"
+          className="object-cover w-[100%] h-[100%]"
         />
       </div>
 
       {/* other images */}
       <div className="h-[20vh] grid grid-cols-4 gap-5 ">
         <div className="shadow-sm border rounded-xl overflow-hidden ">
-          <img src={data?.data?.data?.foodImg} alt="img" />
+          <img src={data?.data?.data?.foodImg} alt="img" className="object-cover w-[100%] h-[100%]"/>
         </div>
         <div className="shadow-sm border rounded-xl overflow-hidden ">
-          <img src={data?.data?.data?.foodImg} alt="img" />
+          <img src={data?.data?.data?.foodImg} alt="img" className="object-cover w-[100%] h-[100%]"/>
         </div>
         <div className="shadow-sm border rounded-xl overflow-hidden ">
-          <img src={data?.data?.data?.foodImg} alt="img" />
+          <img src={data?.data?.data?.foodImg} alt="img" className="object-cover w-[100%] h-[100%]"/>
         </div>
         <div className="shadow-sm border rounded-xl overflow-hidden ">
-          <img src={data?.data?.data?.foodImg} alt="img" />
+          <img src={data?.data?.data?.foodImg} alt="img" className="object-cover w-[100%] h-[100%]"/>
         </div>
       </div>
     </div>
