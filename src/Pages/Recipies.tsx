@@ -99,14 +99,14 @@ const Recipes: React.FC = () => {
                     </div>
 
                    <div className="flex items-center mt-[5px]">
-                    <p>₦{recipe.amount}</p>
-                    <button
+                    <p>NGN: ₦{recipe.amount}</p>
+                  </div>
+                  <button
                       onClick={() => togglePopup(index)} // Pass the card's index to togglePopup
-                      className="border border-third w-[170px] h-[40px] rounded ml-[12px]"
+                      className="border border-third w-[170px] h-[40px] rounded mt-[10px] mb-[10px]"
                     >
                       Click to see USD price
                     </button>
-                  </div>
 
                     {openPopupIndex === index ? (
                     <div className="absolute w-[160px] h-[150px] bg-white shadow-sm top-[150px] left-[100px] rounded-sm transition-transform duration-300 flex flex-col justify-center items-center">
