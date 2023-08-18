@@ -8,7 +8,8 @@ const AllUsers = () => {
   });
 
   return (
-    <div className=" h-screen w-full flex flex-col gap-8  ">
+    <div className="w-[100%] flex justify-end">
+      <div className=" h-screen w-[85.4%] flex flex-col gap-8  ">
       <div className="w-full py-5 text-xl bg-first text-white border-b">
         {" "}
         All Users
@@ -62,6 +63,7 @@ const AllUsers = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

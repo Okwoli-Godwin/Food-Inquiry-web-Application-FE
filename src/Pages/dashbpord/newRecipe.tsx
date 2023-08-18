@@ -83,7 +83,8 @@ const newRecipe = () => {
   };
 
   return (
-    <div className="h-screen w-[85.5%] flex flex-col gap-8">
+    <div className="w-[100%] flex justify-end">
+      <div className="h-screen w-[85.2%] flex flex-col gap-8">
       <div className="w-full py-5 text-xl bg-first text-white border-b">
         Create Recipe
       </div>
@@ -177,6 +178,7 @@ const newRecipe = () => {
           </div>
         </div>
       </form>
+    </div>
     </div>
   );
 };
