@@ -24,13 +24,15 @@ const Menus: React.FC<Props> = ({ searchdata, setsearchdata }) => {
 
   const [filteredData, setFilteredData] = useState<Data[]>([]);
 
-  useEffect(() => {
-    if (searchdata.length >= 1) {
-      setFilteredData(searchdata);
-    } else if (data?.data?.data) {
-      setFilteredData(data?.data?.data?.slice(0, 3));
-    }
-  }, [data, searchdata]);
+ useEffect(() => {
+  if (searchdata.length >= 1) {
+    setFilteredData(searchdata);
+  } else if (data?.data?.data && Array.isArray(data.data.data)) {
+    setFilteredData(data.data.data.slice(0, 3));
+  } else {
+    setFilteredData([]);
+  }
+}, [data, searchdata]);
   
 
   return (
