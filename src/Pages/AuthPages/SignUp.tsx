@@ -39,7 +39,7 @@ const SignupForm: React.FC = () => {
 
   const {
     handleSubmit,
-    formState: { errors },
+    formState,
     reset,
     register,
   } = useForm<formData>({
@@ -50,7 +50,7 @@ const SignupForm: React.FC = () => {
     mutationKey: ["user"],
     mutationFn: createUser,
 
-    onSuccess: (data) => {
+    onSuccess: () => {
       Swal.fire({
         title: "Account Created",
         html: "Thank You",
