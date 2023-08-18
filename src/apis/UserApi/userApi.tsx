@@ -17,3 +17,7 @@ export const viewAllUser = async () => {
     .get(`${url}/viewallregisteredusers`)
     .then((res) => res.data?.data);
 };
+
+export const searcheRcipes = async (searchValue: string) => {
+  return await axios.get(`https://food-inquiry-web-79bv.onrender.com/api/recipes/viewAllSearchedRecipes?title=${searchValue}`, ).then((res) => res);
+};
