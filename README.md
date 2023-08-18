@@ -1,3 +1,21 @@
+The webpage URL = https://food-inquiry-web-application-fe.pages.dev/
+Miss ORE have a dashboard where she upload recepies and it calories, 
+the ROUTE to see the dashboard = https://food-inquiry-web-application-fe.pages.dev/new-recipe
+Miss ORE can see all sign-uped users in her dashboard, the ROUTE = https://food-inquiry-web-application-fe.pages.dev/new-recipe/all-users
+
+The endpoint for changing naira(NGN) to dollar($) will be updated soon
+
+I did not see any Free APIS/Service to get Restaurants based on users location
+i saw Geocode API, Google map API, Tom-Tom API for but none of them are free
+
+WEBPAGE URL = https://food-inquiry-web-application-fe.pages.dev/
+
+
+
+
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
