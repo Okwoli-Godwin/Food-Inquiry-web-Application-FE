@@ -124,7 +124,7 @@ const submit = () => {
           </div>
 
 
-          <div className="flex items-center w-[200px]">
+          <div className="flex items-center w-[200px] lg:hidden">
             
             
             {
@@ -135,12 +135,6 @@ const submit = () => {
           onClick={Toggle}
         >
           <span className="sr-only">Menu</span>
-          {/* <img
-            alt="Man"
-            src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-            className="h-[45px] w-[45px] rounded-full object-cover"
-          /> */}
-
                   <div className="h-[45px] w-[45px] bg-gray-400 text-white flex justify-center items-center text-[24px] rounded-full object-cover"
                   >
                     {
@@ -230,7 +224,7 @@ const submit = () => {
               <AiOutlineClose />
             </button>
           </div>
-          <div className="flex flex-col py-3 px-2 overflow-y-auto ">
+          <div className="flex flex-col py-3 px-2 overflow-y-auto h-[100%]">
             <NavLink to="/">
               <h3 className="mr-[55px] m-[10px] text-[20px] font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
               Home
@@ -253,13 +247,79 @@ const submit = () => {
           </h3>
           </NavLink>
           
-          <NavLink to="/sign-in">
-         <div className="flex items-center mt-[12px]">
-            <button className="w-[150px] h-[45px] rounded-md text-[#fff] border border-[#fff] bg-first">
-              Sign In/Sign Up
-            </button>
+          {
+              User?.fullname ? <>
+                <button
+          type="button"
+          className="group flex shrink-0 items-center rounded-lg transition mt-[15px] relative"
+          onClick={Toggle}
+        >
+          <span className="sr-only">Menu</span>
+                  <div className="h-[45px] w-[45px] bg-gray-400 text-white flex justify-center items-center text-[24px] rounded-full object-cover"
+                  >
+                    {
+                      User?.fullname?.charAt(0)
+}
+                  </div>
+
+          <p className="ms-2 text-left text-xs sm:block">
+                    <strong className="flex font-semibold text-[18px]">{
+                      User?.fullname                    
+                      
+            }</strong>
+
+                    <span className=""> {
+                      User?.email                    
+                    } </span>
+          </p>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="ms-4 h-5 w-5 text-white transition sm:block"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          
+          {click ? (
+            <div className="absolute top-[50px] left-[0px] end-0 z-10 mt-2 w-56 rounded-md border border-gray-100 bg-white shadow-lg">
+            <div className="pl-[19px] pt-[12px]">
+              <a
+                href="#"
+                className="flex rounded-lg  text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                          role="menuitem"
+                          onClick={handleLogout}    
+              >
+                Log out
+              </a>
+              
+              <a
+                href="#"
+                className="flex rounded-lg mt-[15px] text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                          role="menuitem"
+                          onClick={submit}
+              >
+                Diactivate Account
+              </a>
+            </div>
           </div>
-         </NavLink>
+          ) : null}
+        </button>
+              </> : <>
+                  <NavLink to="/sign-in">
+           <div className="flex items-center mt-[12px] lg:hidden">
+            <button className="w-[150px] h-[45px] rounded-md border border-[lightgray]">
+              Sign In
+              </button>
+              </div>
+            </NavLink>
+              </>
+            }
           </div>
         </div>
           </Dialog>
