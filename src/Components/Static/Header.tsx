@@ -9,6 +9,7 @@ import { logoutAdmin } from "../../apis/ReduxState";
 import Swal from "sweetalert2";
 import { useMutation } from "@tanstack/react-query";
 import { DeactivateUser } from "../../apis/UserApi/userApi";
+import img from "../../assets/Del.png"
 
 
 
@@ -100,7 +101,7 @@ const submit = () => {
         }`}
       >
         <div className="w-[95%] flex items-center justify-between">
-          <img src="http://unionagency.one/delice/img/logo.png" alt="" className="md:h-[30px]"/>
+          <img src={img} alt="" className="md:h-[30px]"/>
 
           <div className="flex items-center mt-[12px] lg:hidden">
             <NavLink to="/">
