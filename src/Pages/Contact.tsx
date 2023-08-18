@@ -36,7 +36,7 @@ const Contact = () => {
           </div>
 
           <div className="w-[100%] flex justify-center mt-[70px]">
-              <div className="w-[70%] flex flex-wrap">
+              <div className="w-[70%] flex flex-wrap md:w-[100%]">
               <div className="w-[48%] lg:w-[100%] lg:justify-center md:w-[100%]">
                   <img src={img} alt="" />
               </div>

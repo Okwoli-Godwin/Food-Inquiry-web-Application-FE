@@ -3,6 +3,8 @@ import { BsStarFill, BsStarHalf } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getAllRcipes } from "../apis/RecipiesApi/RecipiesApi";
+import { CiSearch } from "react-icons/ci";
+
 
 const Recipies = () => {
   const [show, setShow] = useState(false);
@@ -38,6 +40,18 @@ const Recipies = () => {
           <p className="text-[#fff] text-[30px] mt-[10px] md:text-[25px]">
             Home || Recipes
           </p>
+          <div className="w-[600px] md:w-[350px] h-[60px] md:h-[50px] flex bg-[#fff] mt-[23px] rounded-full items-center overflow-hidden ">
+                <div className="w-[10%] md:w-[15%] h-[100%] flex justify-center items-center">
+                  <div className="text-[24px]">
+                    <CiSearch />
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  className="flex-1 h-[100%] border-none outline-none"
+                  placeholder="Search recipes......"
+                />
+              </div>
         </div>
       </div>
 
