@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const RecipeImage = () => {
   const { id } = useParams();
-  const { data, isLoading } = useQuery({
+  const { data } = useQuery({
     queryFn: () => viewAParticularRecipe(id),
   });
 

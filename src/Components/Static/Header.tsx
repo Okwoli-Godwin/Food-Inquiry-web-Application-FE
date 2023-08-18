@@ -59,7 +59,7 @@ const Header = () => {
     });
   };
 const DeactivateThisUser = useMutation((id: any) => DeactivateUser(id), {
-  onSuccess: (data: any) => {
+  onSuccess: () => {
     
     Swal.fire({
       title: 'Are you sure you want to Deactivate Your Account?',

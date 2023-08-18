@@ -1,5 +1,3 @@
-import { FcGoogle } from "react-icons/fc";
-import { BsFacebook, BsTwitter } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -34,7 +32,6 @@ const SignIn = () => {
 
   const {
     handleSubmit,
-    formState: { errors },
     reset,
     register,
   } = useForm<formData>({
