@@ -22,10 +22,10 @@ const newRecipe = () => {
   const schema = yup
     .object({
       title: yup.string().required("Please Enter your title"),
-      amount: yup.number().required("Please Enter amount"),
-      calory: yup.number().required("Please Enter calory count"),
-      ingredients: yup.string().required("Please Enter ingredients"),
-      nutritions: yup.string().required("Please Enter your nutritions"),
+      ingredient: yup.string().required("Please Enter ingredients"),
+      amount: yup.string().required("Please Enter your amountamount"),
+      Recipe: yup.string().required("Please Enter your amountamount"),
+      calorie: yup.string().required("Please Enter your calorie"),
     })
     .required();
   type FormData = yup.InferType<typeof schema>;
@@ -73,7 +73,9 @@ const newRecipe = () => {
       if (foodImg) {
         const formData = new FormData();
         formData.append("title", data.title);
-        formData.append("nutritions", data.nutritions);
+        formData.append("amount", data.amount);
+        formData.append("calorie", data.calorie);
+        formData.append("ingredient", data.ingredient);
         formData.append("foodImg", foodImg);
         postData.mutate(formData);
       }
@@ -81,7 +83,7 @@ const newRecipe = () => {
   };
 
   return (
-      <div className="h-screen w-[85.5%] flex flex-col gap-8">
+    <div className="h-screen w-[85.5%] flex flex-col gap-8">
       <div className="w-full py-5 text-xl bg-first text-white border-b">
         Create Recipe
       </div>
@@ -115,15 +117,15 @@ const newRecipe = () => {
             <input
               type="number"
               required
-              {...register("calory")}
+              {...register("calorie")}
               className="w-full h-[10vh] text-xl pl-3 outline-none border-b"
               placeholder="enter calory count"
             />
-            </div>
-            <div className="flex flex-col gap-7">
+          </div>
+          <div className="flex flex-col gap-7">
             <p className="text-2xl font-semibold">Ingredients</p>
             <textarea
-              {...register("ingredients")}
+              {...register("ingredient")}
               required
               placeholder="enter recipe ingredients"
               className="w-full border-b outline-none text-xl h-[100px] resize-none"
@@ -133,7 +135,7 @@ const newRecipe = () => {
           <div className="flex flex-col gap-7">
             <p className="text-2xl font-semibold">Recipe text</p>
             <textarea
-              {...register("nutritions")}
+              {...register("Recipe")}
               required
               placeholder="enter recipe description"
               className="w-full border-b outline-none text-xl h-[100px] resize-none"

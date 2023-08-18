@@ -1,15 +1,17 @@
+import React, { useState, useEffect } from "react";
 import { CiSearch } from "react-icons/ci";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Hero2 from "./Hero2";
-import Hero3 from "./Hero3";
-import { useMutation } from "react-query";
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
-import { searchRcipes } from "../apis/RecipiesApi/RecipiesApi";
+import { getAllRcipes } from "../apis/RecipiesApi/RecipiesApi";
+import { Data } from "../apis/Allinterface";
 
-const Hero = () => {
+interface Props {
+  setsearchdata?: React.Dispatch<React.SetStateAction<Data[]>>;
+}
+
+const Hero: React.FC<Props> = ({ setsearchdata }) => {
   const settings = {
     infinite: true,
     speed: 1000,
@@ -19,10 +21,15 @@ const Hero = () => {
   };
 
   const [search, setSearch] = useState("");
-
-  const data = useQuery({
-    queryFn: () => searchRcipes(search),
+  const { data, isLoading } = useQuery({
+    queryFn: getAllRcipes,
   });
+
+  useEffect(() => {
+    if (data?.data?.data) {
+      setsearchdata!(data.data.data.filter((e: any) => e.title === search));
+    }
+  }, [data, search]);
 
   return (
     <section style={{ overflow: "hidden" }}>

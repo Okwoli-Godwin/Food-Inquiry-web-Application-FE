@@ -3,7 +3,6 @@ import { BsStarFill, BsStarHalf } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getAllRcipes } from "../apis/RecipiesApi/RecipiesApi";
-import { CiSearch } from "react-icons/ci";
 
 const Recipies = () => {
   const [show, setShow] = useState(false);
@@ -22,7 +21,7 @@ const Recipies = () => {
 
   const usdAmount = 500.0;
 
-  const data = useQuery({
+  const { data, isLoading } = useQuery({
     queryFn: getAllRcipes,
   });
 
@@ -39,34 +38,19 @@ const Recipies = () => {
           <p className="text-[#fff] text-[30px] mt-[10px] md:text-[25px]">
             Home || Recipes
           </p>
-          <div className="w-[600px] md:w-[350px] h-[60px] md:h-[50px] flex bg-[#fff] mt-[23px] rounded-full items-center overflow-hidden ">
-                <div className="w-[10%] md:w-[15%] h-[100%] flex justify-center items-center">
-                  <div className="text-[24px]">
-                    <CiSearch />
-                  </div>
-                </div>
-                <input
-                  onChange={(e) => {
-                    setSearch(e.target.value);
-                  }}
-                  type="text"
-                  className="flex-1 h-[100%] border-none outline-none"
-                  placeholder="Search recipes......"
-                />
-              </div>
         </div>
       </div>
 
       <div className="w-[100%] flex justify-center">
         <div className="w-[95%] flex h-[100%] mt-[65px] flex-wrap justify-between md:justify-center">
-          {data?.isLoading
+          {isLoading
             ? "Loading..."
-            : data?.data?.map((e: any) => (
-                <div className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative mb-[33px]">
+            : data?.data?.data?.map((e: any) => (
+                <div className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative">
                   <img
                     src={e.foodImg}
                     alt=""
-                    className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105 object-cover"
+                    className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105"
                   />
 
                   <div className="w-[100%] p-[12px] flex-col">
@@ -99,7 +83,7 @@ const Recipies = () => {
                       </div>
                     ) : null}
 
-                    <p className="mt-[5px]">Calories: {e.calories} carbs</p>
+                    <p className="mt-[5px]">Calories: {e.calorie} carbs</p>
 
                     <button className="w-[100%] h-[40px] bg-third text-[#fff] cursor-pointer rounded mt-[20px]">
                       View Recipies
