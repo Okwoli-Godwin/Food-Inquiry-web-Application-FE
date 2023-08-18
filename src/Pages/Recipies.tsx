@@ -72,12 +72,12 @@ const Recipes: React.FC = () => {
             : filteredData?.map((recipe: Data) => (
                 <div
                   key={recipe._id}
-                  className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative"
+                  className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative mb-[40px]"
                 >
                   <img
                     src={recipe.foodImg}
                     alt=""
-                    className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105"
+                    className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105 object-cover"
                   />
 
                   <div className="w-[100%] p-[12px] flex-col">

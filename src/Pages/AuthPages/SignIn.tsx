@@ -88,7 +88,7 @@ const SignIn = () => {
   return (
     <div className="w-[100%] h-[100%] bg-signinbg bg-no-repeat bg-center bg-cover">
       <div
-        className="w-[100%] flex justify-between h-[100%] pt-[66px] pb-[66px] items-center"
+        className="w-[100%] flex justify-between h-[100%] pt-[121px] pb-[120px] items-center"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
       >
         <div className="w-[55%] pl-[80px] flex-col flex">
@@ -154,20 +154,6 @@ const SignIn = () => {
                 </span>
               </NavLink>
             </h3>
-            <div className="w-[100%] flex flex-col items-center mt-[25px]">
-              <h3>Or sign in with</h3>
-              <div className="mt-[18px] flex">
-                <div className="text-[22px] ml-[12px]">
-                  <FcGoogle />
-                </div>
-                <div className="text-[blue] text-[18px] ml-[12px]">
-                  <BsFacebook />
-                </div>
-                <div className="text-[lightblue] text-[19px] ml-[12px]">
-                  <BsTwitter />
-                </div>
-              </div>
-            </div>
           </form>
         </div>
       </div>

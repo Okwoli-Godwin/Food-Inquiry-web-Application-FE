@@ -11,13 +11,13 @@ const RecipeDetails = () => {
   return (
     <div className="flex flex-col gap-5">
       <h2 className="text-5xl font-semibold uppercase max-[460px]:text-3xl">
-        The title of this recipe
+        {data?.data?.data?.title}
       </h2>
       <hr />
       {/* category button */}
       {/* calorie count */}
       <div className="flex gap-2">
-        <h3 className="text-2xl text-gray-600">calorie count:</h3>
+        <h3 className="text-2xl text-gray-600">calorie count: {data?.data?.data?.calorie}</h3>
         <h4 className="text-4xl font-semibold text-gray-800">
           {data?.data?.calorie}
         </h4>
@@ -36,8 +36,9 @@ const RecipeDetails = () => {
       <div className=" w-[100%] flex">
         <div className="w-[40%] flex flex-col border border-[lightgray] p-[20px]">
           <h3 className="text-[23px] font-semibold">Recipies</h3>
-          <p className="mt-[15px]">{data?.data?.data?.ingredient}</p>
-          <p className="mt-[8px]">4 Large eggs</p>
+          <div className="flex flex-col">
+            <p className="mt-[15px] flex-col">{data?.data?.data?.ingredient}</p>
+          </div>
           <p className="mt-[8px]">5 Cups of mineral water</p>
           <p className="mt-[8px]">Pepper</p>
           <p className="mt-[8px]">Tomatoes</p>
@@ -47,11 +48,7 @@ const RecipeDetails = () => {
           <h3 className="text-[23px] font-semibold">Nutrition</h3>
           <div className="mt-[15px] w-[100%] flex justify-between">
             <p>Calories</p>
-            <p>329</p>
-          </div>
-          <div className="mt-[15px] w-[100%] flex justify-between">
-            <p>Sugar</p>
-            <p>10.5g</p>
+            <p>{data?.data?.data?.calorie}</p>
           </div>
           <div className="mt-[15px] w-[100%] flex justify-between">
             <p>Protein</p>
