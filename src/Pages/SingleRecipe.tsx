@@ -1,6 +1,11 @@
 import { Recipe } from "../Components";
 
 const SingleRecipe = () => {
+
+
+
+  
+
   return (
     <>
       <div className="h-[100%] w-[100%] bg-recipehero bg-center bg-no-repeat bg-cover relative">

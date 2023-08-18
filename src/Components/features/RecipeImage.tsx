@@ -1,10 +1,19 @@
+import { useParams } from "react-router-dom";
+import { viewAParticularRecipe } from "../../apis/RecipiesApi/RecipiesApi";
+import { useQuery } from "@tanstack/react-query";
+
 const RecipeImage = () => {
+  const { id } = useParams();
+  const { data, isLoading } = useQuery({
+    queryFn: () => viewAParticularRecipe(id),
+  });
+
   return (
     <div className="flex flex-col gap-5">
       {/* featured image */}
       <div className="h-[65vh] bg-black">
         <img
-          src="https://klbtheme.com/qualis/wp-content/uploads/2018/12/p12.jpg"
+          src={data?.data?.data?.foodImg}
           alt="main image"
           className="object-cover object-top"
         />
@@ -13,28 +22,16 @@ const RecipeImage = () => {
       {/* other images */}
       <div className="h-[20vh] grid grid-cols-4 gap-5 ">
         <div className="shadow-sm border rounded-xl overflow-hidden ">
-          <img
-            src="https://klbtheme.com/qualis/wp-content/uploads/2018/12/p12.jpg"
-            alt="img"
-          />
+          <img src={data?.data?.data?.foodImg} alt="img" />
         </div>
         <div className="shadow-sm border rounded-xl overflow-hidden ">
-          <img
-            src="https://klbtheme.com/qualis/wp-content/uploads/2018/12/p12.jpg"
-            alt="img"
-          />
+          <img src={data?.data?.data?.foodImg} alt="img" />
         </div>
         <div className="shadow-sm border rounded-xl overflow-hidden ">
-          <img
-            src="https://klbtheme.com/qualis/wp-content/uploads/2018/12/p12.jpg"
-            alt="img"
-          />
+          <img src={data?.data?.data?.foodImg} alt="img" />
         </div>
         <div className="shadow-sm border rounded-xl overflow-hidden ">
-          <img
-            src="https://klbtheme.com/qualis/wp-content/uploads/2018/12/p12.jpg"
-            alt="img"
-          />
+          <img src={data?.data?.data?.foodImg} alt="img" />
         </div>
       </div>
     </div>
