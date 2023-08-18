@@ -21,7 +21,7 @@ const Hero: React.FC<Props> = ({ setsearchdata }) => {
   };
 
   const [search, setSearch] = useState("");
-  const { data, isLoading } = useQuery({
+  const { data } = useQuery({
     queryFn: getAllRcipes,
   });
 

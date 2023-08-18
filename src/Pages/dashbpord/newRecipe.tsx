@@ -38,7 +38,7 @@ const newRecipe = () => {
     mutationKey: ["Recipes"],
     mutationFn: createRecipes,
 
-    onSuccess: (data: any) => {
+    onSuccess: () => {
       Swal.fire({
         title: "Recipe Created",
         html: "Thank You",

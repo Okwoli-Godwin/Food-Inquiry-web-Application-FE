@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const RecipeDetails = () => {
   const { id } = useParams();
-  const { data, isLoading } = useQuery({
+  const { data } = useQuery({
     queryFn: () => viewAParticularRecipe(id),
   });
 

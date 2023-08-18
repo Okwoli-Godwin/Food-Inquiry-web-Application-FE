@@ -10,7 +10,7 @@ interface Props {
   setsearchdata: React.Dispatch<React.SetStateAction<Data[]>>;
 }
 
-const Menus: React.FC<Props> = ({ searchdata, setsearchdata }) => {
+const Menus: React.FC<Props> = ({ searchdata}) => {
   const [show3, setShow3] = useState(false);
   const [usdAmount] = useState(500.0);
 

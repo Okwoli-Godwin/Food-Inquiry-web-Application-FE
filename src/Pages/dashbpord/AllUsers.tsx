@@ -2,33 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import { viewAllUser } from "../../apis/UserApi/userApi";
 
 const AllUsers = () => {
-  const tableItems = [
-    {
-      name: "Liam James",
-      email: "liamjames@example.com",
-      reg_Date: "........",
-    },
-    {
-      name: "Olivia Emma",
-      email: "oliviaemma@example.com",
-      reg_Date: "........",
-    },
-    {
-      name: "William Benjamin",
-      email: "william.benjamin@example.com",
-      reg_Date: "........",
-    },
-    {
-      name: "Henry Theodore",
-      email: "henrytheodore@example.com",
-      reg_Date: "........",
-    },
-    {
-      name: "Amelia Elijah",
-      email: "amelia.elijah@example.com",
-      reg_Date: "........",
-    },
-  ];
 
   const data = useQuery({
     queryFn: viewAllUser,
