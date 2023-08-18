@@ -31,6 +31,7 @@ const Menus: React.FC<Props> = ({ searchdata, setsearchdata }) => {
       setFilteredData(data?.data?.data?.slice(0, 3));
     }
   }, [data, searchdata]);
+  
 
   return (
     <div className="w-[100%] flex h-[100%] flex-col pt-[50px] items-center">
@@ -47,7 +48,7 @@ const Menus: React.FC<Props> = ({ searchdata, setsearchdata }) => {
                 <img
                   src={e.foodImg}
                   alt=""
-                  className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105"
+                  className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105 object-cover"
                 />
 
                 <div className="w-[100%] p-[12px] flex-col">
