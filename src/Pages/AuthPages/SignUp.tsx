@@ -39,7 +39,6 @@ const SignupForm: React.FC = () => {
 
   const {
     handleSubmit,
-    formState,
     reset,
     register,
   } = useForm<formData>({
