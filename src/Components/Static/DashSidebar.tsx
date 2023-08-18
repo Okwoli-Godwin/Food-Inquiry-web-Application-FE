@@ -1,11 +1,10 @@
 import { MdDashboard, MdOutlinePayment } from "react-icons/md";
 import { RiLogoutCircleLine } from "react-icons/ri";
-import { BsArrowLeftRight } from "react-icons/bs";
 import { useState } from "react";
 import Navprop from "../../Components/common/Navprop";
 
 const DashSidebar = () => {
-  const [show, setShow] = useState(true);
+  const [show] = useState(true);
 
   return (
     <div
@@ -80,14 +79,6 @@ const DashSidebar = () => {
                 size={show ? "xl" : "4xl"}
               />
             </div>
-          </div>
-
-          {/* toggle */}
-          <div
-            className="p-3 cursor-pointer text-lg shadow-md bg-first rounded-full text-white absolute top-14 -right-5"
-            onClick={() => setShow(!show)}
-          >
-            <BsArrowLeftRight />
           </div>
         </div>
       </div>
