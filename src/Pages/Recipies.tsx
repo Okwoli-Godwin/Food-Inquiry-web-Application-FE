@@ -18,13 +18,17 @@ const Recipes: React.FC = () => {
   });
 
   useEffect(() => {
-    if (data?.data?.data) {
-      const filteredRecipes = data?.data?.data?.filter((recipe: any) =>
+  if (data?.data?.data) {
+    if (Array.isArray(data.data.data)) {
+      const filteredRecipes = data.data.data.filter((recipe: any) =>
         recipe.title.includes(search)
       );
       setFilteredData(filteredRecipes);
+    } else {
+      console.error("Data is not an array:", data.data.data);
     }
-  }, [data, search]);
+  }
+}, [data, search]);
 
   const toggleUSDPrice = () => {
     setShowUSDPrice(!showUSDPrice);
