@@ -1,4 +1,13 @@
+import { useQuery } from "@tanstack/react-query";
+import { viewAParticularRecipe } from "../../apis/RecipiesApi/RecipiesApi";
+import { useParams } from "react-router-dom";
+
 const RecipeDetails = () => {
+  const { id } = useParams();
+  const { data, isLoading } = useQuery({
+    queryFn: () => viewAParticularRecipe(id),
+  });
+
   return (
     <div className="flex flex-col gap-5">
       <h2 className="text-5xl font-semibold uppercase max-[460px]:text-3xl">
@@ -9,7 +18,9 @@ const RecipeDetails = () => {
       {/* calorie count */}
       <div className="flex gap-2">
         <h3 className="text-2xl text-gray-600">calorie count:</h3>
-        <h4 className="text-4xl font-semibold text-gray-800">20</h4>
+        <h4 className="text-4xl font-semibold text-gray-800">
+          {data?.data?.calorie}
+        </h4>
       </div>
 
       {/* description */}
@@ -25,7 +36,7 @@ const RecipeDetails = () => {
       <div className=" w-[100%] flex">
         <div className="w-[40%] flex flex-col border border-[lightgray] p-[20px]">
           <h3 className="text-[23px] font-semibold">Recipies</h3>
-          <p className="mt-[15px]">1 Cup sifted all purpose flour</p>
+          <p className="mt-[15px]">{data?.data?.data?.ingredient}</p>
           <p className="mt-[8px]">4 Large eggs</p>
           <p className="mt-[8px]">5 Cups of mineral water</p>
           <p className="mt-[8px]">Pepper</p>

@@ -24,13 +24,11 @@ const Menus: React.FC<Props> = ({ searchdata, setsearchdata }) => {
 
   const [filteredData, setFilteredData] = useState<Data[]>([]);
 
-  const [search, setSearch] = useState("");
-
   useEffect(() => {
     if (searchdata.length >= 1) {
       setFilteredData(searchdata);
     } else if (data?.data?.data) {
-      setFilteredData(data.data.data.slice(0, 3));
+      setFilteredData(data?.data?.data?.slice(0, 3));
     }
   }, [data, searchdata]);
 
@@ -41,7 +39,7 @@ const Menus: React.FC<Props> = ({ searchdata, setsearchdata }) => {
       <div className="w-[95%] flex h-[100%] mt-[35px] flex-wrap justify-between lg:justify-center">
         {isLoading
           ? "Loading..."
-          : filteredData.map((e: any) => (
+          : filteredData?.map((e: any) => (
               <div
                 key={e.id}
                 className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative"
@@ -85,7 +83,7 @@ const Menus: React.FC<Props> = ({ searchdata, setsearchdata }) => {
                   <p className="mt-[5px]">Calories: {e.calorie} carbs</p>
 
                   <button className="w-[100%] h-[40px] bg-third text-[#fff] cursor-pointer rounded mt-[20px]">
-                    View Recipies
+                    <NavLink to={`/recipe/${e._id}`}>View Recipes</NavLink>
                   </button>
                 </div>
               </div>

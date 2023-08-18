@@ -1,31 +1,34 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsStarFill, BsStarHalf } from "react-icons/bs";
-import { NavLink } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-import { getAllRcipes } from "../apis/RecipiesApi/RecipiesApi";
 import { CiSearch } from "react-icons/ci";
+import { useQuery } from "@tanstack/react-query";
+import { NavLink } from "react-router-dom";
+import { Data } from "../apis/Allinterface";
+import { getAllRcipes } from "../apis/RecipiesApi/RecipiesApi";
 
-
-const Recipies = () => {
-  const [show, setShow] = useState(false);
-  const [show2, setShow2] = useState(false);
-  const [show3, setShow3] = useState(false);
-
-  const Toggle = () => {
-    setShow(!show);
-  };
-  const Toggle2 = () => {
-    setShow2(!show2);
-  };
-  const Toggle3 = () => {
-    setShow3(!show3);
-  };
+const Recipes: React.FC = () => {
+  const [showUSDPrice, setShowUSDPrice] = useState(false);
+  const [filteredData, setFilteredData] = useState<Data[]>([]);
+  const [search, setSearch] = useState("");
 
   const usdAmount = 500.0;
 
   const { data, isLoading } = useQuery({
     queryFn: getAllRcipes,
   });
+
+  useEffect(() => {
+    if (data?.data?.data) {
+      const filteredRecipes = data?.data?.data?.filter((recipe: any) =>
+        recipe.title.includes(search)
+      );
+      setFilteredData(filteredRecipes);
+    }
+  }, [data, search]);
+
+  const toggleUSDPrice = () => {
+    setShowUSDPrice(!showUSDPrice);
+  };
 
   return (
     <section style={{ overflow: "hidden" }}>
@@ -41,17 +44,20 @@ const Recipies = () => {
             Home || Recipes
           </p>
           <div className="w-[600px] md:w-[350px] h-[60px] md:h-[50px] flex bg-[#fff] mt-[23px] rounded-full items-center overflow-hidden ">
-                <div className="w-[10%] md:w-[15%] h-[100%] flex justify-center items-center">
-                  <div className="text-[24px]">
-                    <CiSearch />
-                  </div>
-                </div>
-                <input
-                  type="text"
-                  className="flex-1 h-[100%] border-none outline-none"
-                  placeholder="Search recipes......"
-                />
+            <div className="w-[10%] md:w-[15%] h-[100%] flex justify-center items-center">
+              <div className="text-[24px]">
+                <CiSearch />
               </div>
+            </div>
+            <input
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
+              type="text"
+              className="flex-1 h-[100%] border-none outline-none"
+              placeholder="Search recipes......"
+            />
+          </div>
         </div>
       </div>
 
@@ -59,17 +65,20 @@ const Recipies = () => {
         <div className="w-[95%] flex h-[100%] mt-[65px] flex-wrap justify-between md:justify-center">
           {isLoading
             ? "Loading..."
-            : data?.data?.data?.map((e: any) => (
-                <div className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative">
+            : filteredData?.map((recipe: Data) => (
+                <div
+                  key={recipe._id}
+                  className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative"
+                >
                   <img
-                    src={e.foodImg}
+                    src={recipe.foodImg}
                     alt=""
                     className="w-[100%] h-[250px] transition duration-500 group-hover:scale-105"
                   />
 
                   <div className="w-[100%] p-[12px] flex-col">
                     <div className="w-[100%] flex items-center justify-between">
-                      <h3 className="text-[25px]">{e.title}</h3>
+                      <h3 className="text-[25px]">{recipe.title}</h3>
                       <div className="flex items-center text-[gold]">
                         <BsStarFill />
                         <BsStarFill />
@@ -79,29 +88,32 @@ const Recipies = () => {
                     </div>
 
                     <div className="flex items-center mt-[5px]">
-                      <p>₦{e.amount}</p>
+                      <p>₦{recipe.amount}</p>
                       <button
-                        onClick={Toggle3}
+                        onClick={toggleUSDPrice}
                         className="border border-third w-[170px] h-[40px] rounded ml-[12px]"
                       >
                         Click to see USD price
                       </button>
                     </div>
 
-                    {show3 ? (
+                    {showUSDPrice && (
                       <div className="absolute w-[160px] h-[150px] bg-white shadow-sm top-[150px] left-[100px] rounded-sm transition-transform duration-300 flex flex-col justify-center items-center">
                         <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                          $ {usdAmount?.toFixed(2)}
+                          $ {usdAmount.toFixed(2)}
                         </h2>
                         <p className="text-sm text-gray-500">Total USD</p>
                       </div>
-                    ) : null}
+                    )}
 
-                    <p className="mt-[5px]">Calories: {e.calorie} carbs</p>
+                    <p className="mt-[5px]">Calories: {recipe.calorie} carbs</p>
 
-                    <button className="w-[100%] h-[40px] bg-third text-[#fff] cursor-pointer rounded mt-[20px]">
-                      View Recipies
-                    </button>
+                    <NavLink
+                      to={`/recipe/${recipe._id}`}
+                      className="w-[100%] h-[40px] bg-third text-[#fff] cursor-pointer rounded mt-[20px] flex items-center justify-center"
+                    >
+                      View Recipe
+                    </NavLink>
                   </div>
                 </div>
               ))}
@@ -111,4 +123,4 @@ const Recipies = () => {
   );
 };
 
-export default Recipies;
+export default Recipes;

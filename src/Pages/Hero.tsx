@@ -27,7 +27,7 @@ const Hero: React.FC<Props> = ({ setsearchdata }) => {
 
   useEffect(() => {
     if (data?.data?.data) {
-      setsearchdata!(data.data.data.filter((e: any) => e.title === search));
+      setsearchdata!(data?.data?.data?.filter((e: any) => e.title === search));
     }
   }, [data, search]);
 

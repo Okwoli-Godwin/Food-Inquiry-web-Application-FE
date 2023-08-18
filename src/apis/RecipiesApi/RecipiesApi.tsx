@@ -17,3 +17,8 @@ export const searchRcipes = async (searchValue: string) => {
 export const getAllRcipes = async () => {
   return await axios.get(`${url}/viewallrecipes`).then((res) => res);
 };
+export const viewAParticularRecipe = async (id: any) => {
+  return await axios
+    .get(`${url}/viewAParticularRecipe/${id}`)
+    .then((res) => res);
+};
