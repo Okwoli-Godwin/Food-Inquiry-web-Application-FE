@@ -10,13 +10,8 @@ interface Props {
   setsearchdata: React.Dispatch<React.SetStateAction<Data[]>>;
 }
 
-const Menus: React.FC<Props> = ({ searchdata}) => {
-  const [show3, setShow3] = useState(false);
-  const [usdAmount] = useState(500.0)
-
-  const Toggle3 = () => {
-    setShow3(!show3);
-  };
+const Menus: React.FC<Props> = ({ searchdata }) => {
+  const [usdAmount] = useState(500.0);
 
   const { data, isLoading } = useQuery({
     queryFn: getAllRcipes,
@@ -24,16 +19,27 @@ const Menus: React.FC<Props> = ({ searchdata}) => {
 
   const [filteredData, setFilteredData] = useState<Data[]>([]);
 
- useEffect(() => {
-  if (searchdata.length >= 1) {
-    setFilteredData(searchdata);
-  } else if (data?.data?.data && Array.isArray(data.data.data)) {
-    setFilteredData(data.data.data.slice(0, 3));
-  } else {
-    setFilteredData([]);
-  }
-}, [data, searchdata]);
-  
+  useEffect(() => {
+    if (searchdata.length >= 1) {
+      setFilteredData(searchdata);
+    } else if (data?.data?.data && Array.isArray(data.data.data)) {
+      setFilteredData(data.data.data.slice(0, 3));
+    } else {
+      setFilteredData([]);
+    }
+  }, [data, searchdata]);
+
+  // Create a state to track which card's popup is open
+  const [openPopupIndex, setOpenPopupIndex] = useState<number | null>(null);
+
+  // Function to toggle the popup for a specific card
+  const togglePopup = (index: number) => {
+    if (openPopupIndex === index) {
+      setOpenPopupIndex(null); // Close the popup if already open
+    } else {
+      setOpenPopupIndex(index); // Open the clicked card's popup
+    }
+  };
 
   return (
     <div className="w-[100%] flex h-[100%] flex-col pt-[50px] items-center">
@@ -42,7 +48,7 @@ const Menus: React.FC<Props> = ({ searchdata}) => {
       <div className="w-[95%] flex h-[100%] mt-[35px] flex-wrap justify-between lg:justify-center">
         {isLoading
           ? "Loading..."
-          : filteredData?.map((e: any) => (
+          : filteredData?.map((e: any, index: number) => (
               <div
                 key={e.id}
                 className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative"
@@ -67,14 +73,14 @@ const Menus: React.FC<Props> = ({ searchdata}) => {
                   <div className="flex items-center mt-[5px]">
                     <p>₦{e.amount}</p>
                     <button
-                      onClick={Toggle3}
+                      onClick={() => togglePopup(index)} // Pass the card's index to togglePopup
                       className="border border-third w-[170px] h-[40px] rounded ml-[12px]"
                     >
                       Click to see USD price
                     </button>
                   </div>
 
-                  {show3 ? (
+                  {openPopupIndex === index ? (
                     <div className="absolute w-[160px] h-[150px] bg-white shadow-sm top-[150px] left-[100px] rounded-sm transition-transform duration-300 flex flex-col justify-center items-center">
                       <h2 className="text-2xl font-bold text-gray-800 mb-2">
                         $ {usdAmount?.toFixed(2)}
