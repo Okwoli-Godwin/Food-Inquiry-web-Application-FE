@@ -7,9 +7,19 @@ import { Data } from "../apis/Allinterface";
 import { getAllRcipes } from "../apis/RecipiesApi/RecipiesApi";
 
 const Recipes: React.FC = () => {
-  const [showUSDPrice, setShowUSDPrice] = useState(false);
   const [filteredData, setFilteredData] = useState<Data[]>([]);
   const [search, setSearch] = useState("");
+
+  const [openPopupIndex, setOpenPopupIndex] = useState<number | null>(null);
+
+   // Function to toggle the popup for a specific card
+  const togglePopup = (index: number) => {
+    if (openPopupIndex === index) {
+      setOpenPopupIndex(null); // Close the popup if already open
+    } else {
+      setOpenPopupIndex(index); // Open the clicked card's popup
+    }
+  };
 
   const usdAmount = 500.0;
 
@@ -30,9 +40,6 @@ const Recipes: React.FC = () => {
   }
 }, [data, search]);
 
-  const toggleUSDPrice = () => {
-    setShowUSDPrice(!showUSDPrice);
-  };
 
   return (
     <section style={{ overflow: "hidden" }}>
@@ -69,7 +76,7 @@ const Recipes: React.FC = () => {
         <div className="w-[95%] flex h-[100%] mt-[65px] flex-wrap justify-between md:justify-center">
           {isLoading
             ? "Loading..."
-            : filteredData?.map((recipe: Data) => (
+            : filteredData?.map((recipe: Data, index: number) => (
                 <div
                   key={recipe._id}
                   className="w-[390px] h-[100%] rounded-lg flex-col overflow-hidden shadow-md object-fit-cover relative mb-[40px]"
@@ -91,24 +98,24 @@ const Recipes: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="flex items-center mt-[5px]">
-                      <p>₦{recipe.amount}</p>
-                      <button
-                        onClick={toggleUSDPrice}
-                        className="border border-third w-[170px] h-[40px] rounded ml-[12px]"
-                      >
-                        Click to see USD price
-                      </button>
-                    </div>
+                   <div className="flex items-center mt-[5px]">
+                    <p>₦{recipe.amount}</p>
+                    <button
+                      onClick={() => togglePopup(index)} // Pass the card's index to togglePopup
+                      className="border border-third w-[170px] h-[40px] rounded ml-[12px]"
+                    >
+                      Click to see USD price
+                    </button>
+                  </div>
 
-                    {showUSDPrice && (
-                      <div className="absolute w-[160px] h-[150px] bg-white shadow-sm top-[150px] left-[100px] rounded-sm transition-transform duration-300 flex flex-col justify-center items-center">
-                        <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                          $ {usdAmount.toFixed(2)}
-                        </h2>
-                        <p className="text-sm text-gray-500">Total USD</p>
-                      </div>
-                    )}
+                    {openPopupIndex === index ? (
+                    <div className="absolute w-[160px] h-[150px] bg-white shadow-sm top-[150px] left-[100px] rounded-sm transition-transform duration-300 flex flex-col justify-center items-center">
+                      <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                        $ {usdAmount?.toFixed(2)}
+                      </h2>
+                      <p className="text-sm text-gray-500">Total USD</p>
+                    </div>
+                  ) : null}
 
                     <p className="mt-[5px]">Calories: {recipe.calorie} carbs</p>
 
@@ -128,3 +135,4 @@ const Recipes: React.FC = () => {
 };
 
 export default Recipes;
+
