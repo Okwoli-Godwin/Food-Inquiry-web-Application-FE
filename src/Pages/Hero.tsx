@@ -26,10 +26,10 @@ const Hero: React.FC<Props> = ({ setsearchdata }) => {
   });
 
   useEffect(() => {
-    if (data?.data?.data) {
-      setsearchdata!(data?.data?.data?.filter((e: any) => e.title === search));
-    }
-  }, [data, search]);
+  if (data?.data?.data && Array.isArray(data?.data?.data)) {
+    setsearchdata!(data?.data?.data?.filter((e: any) => e.title === search));
+  }
+}, [data, search]);
 
   return (
     <section style={{ overflow: "hidden" }}>
